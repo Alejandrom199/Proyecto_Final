@@ -1,3 +1,5 @@
+using CapaVisual;
+
 namespace Proyecto_Final
 {
     internal static class Program
@@ -11,7 +13,8 @@ namespace Proyecto_Final
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            frmLogin pantallaLogin = new frmLogin();
+            Application.Run(pantallaLogin);
         }
     }
 }

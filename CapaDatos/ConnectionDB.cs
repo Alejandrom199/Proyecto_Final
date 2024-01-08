@@ -9,7 +9,7 @@ namespace CapaDatos
 {
     public class ConnectionDB
     {
-        private SqlConnection cadena_conexion = new SqlConnection("server=ALEJANDRO-PC; database=REINA_FACULTAD; User ID=sa; Password=sa;TrustServerCertificate=true");
+        private SqlConnection cadena_conexion = new SqlConnection("server=ALEJANDRO-PC; database=Mantenimiento_Carros; User ID=sa; Password=sa;TrustServerCertificate=true");
 
         public SqlConnection AbrirConexion()
         {
