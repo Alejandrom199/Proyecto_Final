@@ -38,7 +38,6 @@
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             groupBox1 = new GroupBox();
-            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -60,7 +59,6 @@
             // panel1
             // 
             panel1.BackColor = Color.Bisque;
-            panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(textBox2);
@@ -135,15 +133,6 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
-            // button2
-            // 
-            button2.Location = new Point(180, 282);
-            button2.Name = "button2";
-            button2.Size = new Size(103, 20);
-            button2.TabIndex = 6;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -173,6 +162,5 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private GroupBox groupBox1;
-        private Button button2;
     }
 }
