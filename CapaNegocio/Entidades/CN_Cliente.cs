@@ -13,6 +13,7 @@ namespace CapaNegocio.Entidades
     {
         private ManageSql obj_capa_datos = new ManageSql();
 
+        private int id;
         private string telefono;
         private string direccion;
 
@@ -26,17 +27,30 @@ namespace CapaNegocio.Entidades
         {
         }
 
+        public int Id { get => id; set => id = value; }
         public string Telefono { get => telefono; set => telefono = value; }
         public string Direccion { get => direccion; set => direccion = value; }
+
+        public DataTable GetListaClientes()
+        {
+            try
+            {
+                string nombreStoredProcedure = "SP_OBTENER_CLIENTES";
+
+                return obj_capa_datos.EjecutarSPSelect(nombreStoredProcedure, null);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al obtener listado de Clientes." + e.Message);
+            }
+        }
 
         public bool CrearCliente(CN_Cliente cliente)
         {
             try
             {
-                // Nombre del stored procedure
                 string nombreStoredProcedure = "SP_CREATE_CLIENTE";
 
-                // Parámetros del stored procedure
                 SqlParameter[] parametros = new SqlParameter[]
                 {
                     new SqlParameter("@nombre", cliente.Nombre),
@@ -46,7 +60,6 @@ namespace CapaNegocio.Entidades
                     new SqlParameter("@direccion", cliente.Direccion),
                 };
 
-                // Llama al método EjecutarSPSql
                 return obj_capa_datos.EjecutarSPSql(nombreStoredProcedure, parametros);
             }
             catch (Exception e)
@@ -55,20 +68,49 @@ namespace CapaNegocio.Entidades
             }
         }
 
-        public DataTable GetListaClientes()
+        public bool ModificarCliente(CN_Cliente cliente)
         {
             try
             {
-                // Nombre del stored procedure
-                string nombreStoredProcedure = "SP_OBTENER_CLIENTES";
+                string nombreStoredProcedure = "SP_MODIFICAR_CLIENTE";
 
-                // Llama al método EjecutarSPSelect
-                return obj_capa_datos.EjecutarSPSelect(nombreStoredProcedure, null);
+                SqlParameter[] parametros = new SqlParameter[]
+                {
+                    new SqlParameter("@nombre", cliente.Nombre),
+                    new SqlParameter("@apellido", cliente.Apellido),
+                    new SqlParameter("@cedula", cliente.Cedula),
+                    new SqlParameter("@telefono", cliente.Telefono),
+                    new SqlParameter("@direccion", cliente.Direccion),
+                    new SqlParameter("@id", cliente.Id)
+                };
+
+                return obj_capa_datos.EjecutarSPSql(nombreStoredProcedure, parametros);
             }
             catch (Exception e)
             {
-                throw new Exception("Error al obtener listado de Clientes." + e.Message);
+                throw new Exception("Error al modificar Cliente: " + e.Message);
             }
         }
+
+        public bool EliminarCliente(CN_Cliente cliente)
+        {
+            try
+            {
+                string nombreStoredProcedure = "SP_ELIMINAR_CLIENTE";
+
+                SqlParameter[] parametros = new SqlParameter[]
+                {
+                    new SqlParameter("@id", cliente.id),
+                };
+
+                return obj_capa_datos.EjecutarSPSql(nombreStoredProcedure, parametros);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al eliminar Cliente: " + e.Message);
+            }
+        }
+
+
     }
 }
