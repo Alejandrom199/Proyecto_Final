@@ -34,19 +34,16 @@ namespace CapaNegocio.Entidades
             try
             {
                 // Nombre del stored procedure
-                string nombreStoredProcedure = "SP_CREATE_ALUMNO";
+                string nombreStoredProcedure = "SP_CREATE_CLIENTE";
 
                 // Parámetros del stored procedure
                 SqlParameter[] parametros = new SqlParameter[]
                 {
-                    new SqlParameter("@cedula", cliente.cedula),
-                    new SqlParameter("@nombres", cliente.nombre),
-                    new SqlParameter("@apellidos", cliente.apellidos),
-                    new SqlParameter("@genero", cliente.genero),
-                    new SqlParameter("@fecha_nacimiento", cliente.fecha_Nacimiento),
-                    new SqlParameter("@direccion", cliente.direccion),
+                    new SqlParameter("@nombre", cliente.Nombre),
+                    new SqlParameter("@apellido", cliente.Apellido),
+                    new SqlParameter("@cedula", cliente.Cedula),
                     new SqlParameter("@telefono", cliente.Telefono),
-                    new SqlParameter("@estado", cliente.estado)
+                    new SqlParameter("@direccion", cliente.Direccion),
                 };
 
                 // Llama al método EjecutarSPSql
@@ -54,24 +51,23 @@ namespace CapaNegocio.Entidades
             }
             catch (Exception e)
             {
-                throw new Exception("Error al crear Candidata: " + e.Message);
+                throw new Exception("Error al crear Cliente: " + e.Message);
             }
         }
 
-        public DataTable GetListaAlumnos()
+        public DataTable GetListaClientes()
         {
-            Console.WriteLine("entro al lista Candidatas");
             try
             {
                 // Nombre del stored procedure
-                string nombreStoredProcedure = "SP_OBTENER_ALUMNOS";
+                string nombreStoredProcedure = "SP_OBTENER_CLIENTES";
 
                 // Llama al método EjecutarSPSelect
                 return obj_capa_datos.EjecutarSPSelect(nombreStoredProcedure, null);
             }
             catch (Exception e)
             {
-                throw new Exception("Error al obtener listado de Candidatas." + e.Message);
+                throw new Exception("Error al obtener listado de Clientes." + e.Message);
             }
         }
     }

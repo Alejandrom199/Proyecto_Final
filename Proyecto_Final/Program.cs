@@ -14,7 +14,7 @@ namespace Proyecto_Final
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             frmLogin pantallaLogin = new frmLogin();
-            Application.Run(pantallaLogin);
+            Application.Run(new frmClientes());
         }
     }
 }
