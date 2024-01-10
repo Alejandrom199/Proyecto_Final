@@ -110,7 +110,5 @@ namespace CapaNegocio.Entidades
                 throw new Exception("Error al eliminar Cliente: " + e.Message);
             }
         }
-
-
     }
 }

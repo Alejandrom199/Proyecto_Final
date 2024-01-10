@@ -16,5 +16,23 @@ namespace CapaVisual
         {
             InitializeComponent();
         }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            frmClientes pantallaClientes = new frmClientes();
+            pantallaClientes.Show();
+        }
+
+        private void btnMecanico_Click(object sender, EventArgs e)
+        {
+            frmMecanico pantallaMecanicos = new frmMecanico();
+            pantallaMecanicos.Show();
+        }
+
+        private void btnMantenimiento_Click(object sender, EventArgs e)
+        {
+            frmMantenimiento pantallaMantenimiento = new frmMantenimiento();
+            pantallaMantenimiento.Show();
+        }
     }
 }
