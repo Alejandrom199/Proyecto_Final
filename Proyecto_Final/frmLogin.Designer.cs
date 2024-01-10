@@ -31,17 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            label1 = new Label();
             button1 = new Button();
+            label1 = new Label();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
             groupBox1 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -70,41 +70,16 @@
             panel1.Size = new Size(330, 394);
             panel1.TabIndex = 1;
             // 
-            // pictureBox2
+            // button1
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(49, 166);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(51, 46);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(49, 232);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(51, 46);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 1;
-            pictureBox3.TabStop = false;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(106, 176);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(180, 27);
-            textBox1.TabIndex = 2;
-            textBox1.Text = "usuario";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(106, 242);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(180, 27);
-            textBox2.TabIndex = 3;
-            textBox2.Text = "contrasena";
+            button1.BackColor = Color.Wheat;
+            button1.Font = new Font("Perpetua Titling MT", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(91, 327);
+            button1.Name = "button1";
+            button1.Size = new Size(159, 33);
+            button1.TabIndex = 5;
+            button1.Text = "Ingresar";
+            button1.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -116,15 +91,41 @@
             label1.TabIndex = 4;
             label1.Text = "LOGIN";
             // 
-            // button1
+            // textBox2
             // 
-            button1.Font = new Font("Perpetua Titling MT", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(91, 327);
-            button1.Name = "button1";
-            button1.Size = new Size(159, 33);
-            button1.TabIndex = 5;
-            button1.Text = "Ingresar";
-            button1.UseVisualStyleBackColor = true;
+            textBox2.Location = new Point(106, 242);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(180, 27);
+            textBox2.TabIndex = 3;
+            textBox2.Text = "contrasena";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(106, 176);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(180, 27);
+            textBox1.TabIndex = 2;
+            textBox1.Text = "usuario";
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(49, 232);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(51, 46);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 1;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(49, 166);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(51, 46);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
             // 
             // groupBox1
             // 
@@ -148,8 +149,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);
         }
