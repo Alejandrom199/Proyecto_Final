@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace CapaNegocio.Entidades
     {
         private string codigo;
         private string mecanico;
-        private string cliente;
+        private CN_Cliente cliente;
         private string fecha;
         private CN_Vehiculo vehiculo;
         private string diagnostico;
@@ -18,7 +19,7 @@ namespace CapaNegocio.Entidades
         private string tipoMantenimiento;
         private decimal totPagar;
 
-        public CN_Mantenimiento(string codigo, string mecanico, string cliente, string fecha, CN_Vehiculo vehiculo, string diagnostico, string trabajosRealizados, string tipoMantenimiento, decimal totPagar)
+        public CN_Mantenimiento(string codigo, string mecanico, CN_Cliente cliente, string fecha, CN_Vehiculo vehiculo, string diagnostico, string trabajosRealizados, string tipoMantenimiento, decimal totPagar)
         {
             this.codigo = codigo;
             this.mecanico = mecanico;
@@ -45,5 +46,19 @@ namespace CapaNegocio.Entidades
         public string TrabajosRealizados { get => trabajosRealizados; set => trabajosRealizados = value; }
         public string TipoMantenimiento1 { get => tipoMantenimiento; set => tipoMantenimiento = value; }
         public decimal TotPagar { get => totPagar; set => totPagar = value; }
+
+        public DataTable GetListaMecanicos()
+        {
+            try
+            {
+                string nombreStoredProcedure = "SP_OBTENER_MECANICOS";
+
+                return obj_capa_datos.EjecutarSPSelect(nombreStoredProcedure, null);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al obtener listado de Mecanicos." + e.Message);
+            }
+        }
     }
 }

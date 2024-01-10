@@ -127,7 +127,7 @@ namespace CapaVisual
             }
         }
 
-        private void btnNuevo_Click_1(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
         {
             isNuevo = true;
             SetearCampos();
@@ -211,6 +211,11 @@ namespace CapaVisual
             {
                 MessageBox.Show("Registro no pudo ser eliminado!");
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

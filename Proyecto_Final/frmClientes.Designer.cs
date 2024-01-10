@@ -192,7 +192,7 @@
             btnNuevo.TabIndex = 2;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
-            btnNuevo.Click += btnNuevo_Click_1;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnAgregar
             // 
@@ -232,6 +232,7 @@
             btnCancelar.TabIndex = 6;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // groupBox2
             // 
