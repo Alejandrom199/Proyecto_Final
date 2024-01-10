@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMantenimiento));
             groupBox2 = new GroupBox();
-            btnCancelar = new Button();
-            btnEliminar = new Button();
-            btnModificar = new Button();
-            btnAgregar = new Button();
-            btnNuevo = new Button();
             groupBox1 = new GroupBox();
             dtpFecha = new DateTimePicker();
             cbxCliente = new ComboBox();
@@ -55,6 +51,11 @@
             tbxTotalPagar = new TextBox();
             label9 = new Label();
             groupBox3 = new GroupBox();
+            btnCancelar = new Button();
+            btnEliminar = new Button();
+            btnModificar = new Button();
+            btnAgregar = new Button();
+            button1 = new Button();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMantenimiento).BeginInit();
@@ -68,69 +69,14 @@
             groupBox2.Controls.Add(btnEliminar);
             groupBox2.Controls.Add(btnModificar);
             groupBox2.Controls.Add(btnAgregar);
-            groupBox2.Controls.Add(btnNuevo);
+            groupBox2.Controls.Add(button1);
             groupBox2.Location = new Point(763, 11);
-            groupBox2.Margin = new Padding(2, 2, 2, 2);
+            groupBox2.Margin = new Padding(2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(2, 2, 2, 2);
+            groupBox2.Padding = new Padding(2);
             groupBox2.Size = new Size(151, 225);
             groupBox2.TabIndex = 13;
             groupBox2.TabStop = false;
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancelar.Location = new Point(27, 183);
-            btnCancelar.Margin = new Padding(2, 2, 2, 2);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(97, 27);
-            btnCancelar.TabIndex = 6;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEliminar.Location = new Point(27, 142);
-            btnEliminar.Margin = new Padding(2, 2, 2, 2);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(97, 27);
-            btnEliminar.TabIndex = 5;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnModificar
-            // 
-            btnModificar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnModificar.Location = new Point(27, 101);
-            btnModificar.Margin = new Padding(2, 2, 2, 2);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(97, 27);
-            btnModificar.TabIndex = 4;
-            btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            btnAgregar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAgregar.Location = new Point(27, 59);
-            btnAgregar.Margin = new Padding(2, 2, 2, 2);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(97, 27);
-            btnAgregar.TabIndex = 3;
-            btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // btnNuevo
-            // 
-            btnNuevo.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnNuevo.Location = new Point(27, 15);
-            btnNuevo.Margin = new Padding(2, 2, 2, 2);
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(97, 27);
-            btnNuevo.TabIndex = 2;
-            btnNuevo.Text = "Nuevo";
-            btnNuevo.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -153,9 +99,9 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox1.Location = new Point(10, 9);
-            groupBox1.Margin = new Padding(2, 2, 2, 2);
+            groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(2, 2, 2, 2);
+            groupBox1.Padding = new Padding(2);
             groupBox1.Size = new Size(749, 286);
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
@@ -164,7 +110,7 @@
             // dtpFecha
             // 
             dtpFecha.Location = new Point(73, 79);
-            dtpFecha.Margin = new Padding(2, 2, 2, 2);
+            dtpFecha.Margin = new Padding(2);
             dtpFecha.Name = "dtpFecha";
             dtpFecha.Size = new Size(297, 23);
             dtpFecha.TabIndex = 20;
@@ -173,7 +119,7 @@
             // 
             cbxCliente.FormattingEnabled = true;
             cbxCliente.Location = new Point(549, 29);
-            cbxCliente.Margin = new Padding(2, 2, 2, 2);
+            cbxCliente.Margin = new Padding(2);
             cbxCliente.Name = "cbxCliente";
             cbxCliente.Size = new Size(185, 24);
             cbxCliente.TabIndex = 19;
@@ -182,7 +128,7 @@
             // 
             cbxMecanico.FormattingEnabled = true;
             cbxMecanico.Location = new Point(255, 29);
-            cbxMecanico.Margin = new Padding(2, 2, 2, 2);
+            cbxMecanico.Margin = new Padding(2);
             cbxMecanico.Name = "cbxMecanico";
             cbxMecanico.Size = new Size(177, 24);
             cbxMecanico.TabIndex = 18;
@@ -210,7 +156,7 @@
             // tbxDiagnostico
             // 
             tbxDiagnostico.Location = new Point(526, 176);
-            tbxDiagnostico.Margin = new Padding(2, 2, 2, 2);
+            tbxDiagnostico.Margin = new Padding(2);
             tbxDiagnostico.Multiline = true;
             tbxDiagnostico.Name = "tbxDiagnostico";
             tbxDiagnostico.Size = new Size(208, 93);
@@ -219,7 +165,7 @@
             // tbxTrabajosRealizados
             // 
             tbxTrabajosRealizados.Location = new Point(14, 176);
-            tbxTrabajosRealizados.Margin = new Padding(2, 2, 2, 2);
+            tbxTrabajosRealizados.Margin = new Padding(2);
             tbxTrabajosRealizados.Multiline = true;
             tbxTrabajosRealizados.Name = "tbxTrabajosRealizados";
             tbxTrabajosRealizados.Size = new Size(235, 93);
@@ -228,7 +174,7 @@
             // tbxTipoMantenimiento
             // 
             tbxTipoMantenimiento.Location = new Point(280, 176);
-            tbxTipoMantenimiento.Margin = new Padding(2, 2, 2, 2);
+            tbxTipoMantenimiento.Margin = new Padding(2);
             tbxTipoMantenimiento.Multiline = true;
             tbxTipoMantenimiento.Name = "tbxTipoMantenimiento";
             tbxTipoMantenimiento.Size = new Size(216, 93);
@@ -237,7 +183,7 @@
             // tbxVehiculo
             // 
             tbxVehiculo.Location = new Point(526, 81);
-            tbxVehiculo.Margin = new Padding(2, 2, 2, 2);
+            tbxVehiculo.Margin = new Padding(2);
             tbxVehiculo.Name = "tbxVehiculo";
             tbxVehiculo.Size = new Size(208, 23);
             tbxVehiculo.TabIndex = 8;
@@ -245,7 +191,7 @@
             // tbxId
             // 
             tbxId.Location = new Point(59, 30);
-            tbxId.Margin = new Padding(2, 2, 2, 2);
+            tbxId.Margin = new Padding(2);
             tbxId.Name = "tbxId";
             tbxId.Size = new Size(82, 23);
             tbxId.TabIndex = 6;
@@ -316,7 +262,7 @@
             dgvMantenimiento.AllowUserToDeleteRows = false;
             dgvMantenimiento.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMantenimiento.Location = new Point(11, 310);
-            dgvMantenimiento.Margin = new Padding(2, 2, 2, 2);
+            dgvMantenimiento.Margin = new Padding(2);
             dgvMantenimiento.Name = "dgvMantenimiento";
             dgvMantenimiento.ReadOnly = true;
             dgvMantenimiento.RowHeadersWidth = 62;
@@ -327,7 +273,7 @@
             // tbxTotalPagar
             // 
             tbxTotalPagar.Location = new Point(16, 37);
-            tbxTotalPagar.Margin = new Padding(2, 2, 2, 2);
+            tbxTotalPagar.Margin = new Padding(2);
             tbxTotalPagar.Name = "tbxTotalPagar";
             tbxTotalPagar.Size = new Size(121, 23);
             tbxTotalPagar.TabIndex = 16;
@@ -349,12 +295,74 @@
             groupBox3.Controls.Add(tbxTotalPagar);
             groupBox3.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox3.Location = new Point(763, 225);
-            groupBox3.Margin = new Padding(2, 2, 2, 2);
+            groupBox3.Margin = new Padding(2);
             groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(2, 2, 2, 2);
+            groupBox3.Padding = new Padding(2);
             groupBox3.Size = new Size(151, 70);
             groupBox3.TabIndex = 14;
             groupBox3.TabStop = false;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.BackgroundImage = (Image)resources.GetObject("btnCancelar.BackgroundImage");
+            btnCancelar.BackgroundImageLayout = ImageLayout.Zoom;
+            btnCancelar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancelar.Location = new Point(54, 161);
+            btnCancelar.Margin = new Padding(2);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(48, 48);
+            btnCancelar.TabIndex = 16;
+            btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
+            btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnEliminar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminar.Location = new Point(89, 91);
+            btnEliminar.Margin = new Padding(2);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(48, 48);
+            btnEliminar.TabIndex = 15;
+            btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnModificar
+            // 
+            btnModificar.BackgroundImage = (Image)resources.GetObject("btnModificar.BackgroundImage");
+            btnModificar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnModificar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnModificar.Location = new Point(16, 91);
+            btnModificar.Margin = new Padding(2);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(48, 48);
+            btnModificar.TabIndex = 14;
+            btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.BackgroundImage = (Image)resources.GetObject("btnAgregar.BackgroundImage");
+            btnAgregar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnAgregar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAgregar.Location = new Point(91, 14);
+            btnAgregar.Margin = new Padding(2);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(48, 48);
+            btnAgregar.TabIndex = 13;
+            btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(16, 14);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.RightToLeft = RightToLeft.No;
+            button1.Size = new Size(48, 48);
+            button1.TabIndex = 12;
+            button1.UseVisualStyleBackColor = false;
             // 
             // frmMantenimiento
             // 
@@ -366,7 +374,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(dgvMantenimiento);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "frmMantenimiento";
             Text = "frmMantenimiento";
             groupBox2.ResumeLayout(false);
@@ -381,11 +389,6 @@
         #endregion
 
         private GroupBox groupBox2;
-        private Button btnCancelar;
-        private Button btnEliminar;
-        private Button btnModificar;
-        private Button btnAgregar;
-        private Button btnNuevo;
         private GroupBox groupBox1;
         private Label label8;
         private Label label7;
@@ -407,5 +410,10 @@
         private Label label9;
         private TextBox tbxTotalPagar;
         private GroupBox groupBox3;
+        private Button btnCancelar;
+        private Button btnEliminar;
+        private Button btnModificar;
+        private Button btnAgregar;
+        private Button button1;
     }
 }
