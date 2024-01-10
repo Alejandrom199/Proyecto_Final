@@ -46,6 +46,19 @@ namespace CapaNegocio.Entidades
             }
         }
 
+        public DataTable GetMecanicosByID()
+        {
+            try
+            {
+                string nombreStoredProcedure = "SP_OBTENER_MECANICO_BY_ID";
+
+                return obj_capa_datos.EjecutarSPSelect(nombreStoredProcedure, null);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al obtener Mecanico por ID." + e.Message);
+            }
+        }
         public bool CrearMecanico(CN_Mecanico mecanico)
         {
             try
@@ -77,12 +90,12 @@ namespace CapaNegocio.Entidades
 
                 SqlParameter[] parametros = new SqlParameter[]
                 {
+                    new SqlParameter("@id", mecanico.Id),
                     new SqlParameter("@nombre", mecanico.Nombre),
                     new SqlParameter("@apellido", mecanico.Apellido),
                     new SqlParameter("@cedula", mecanico.Cedula),
                     new SqlParameter("@especialidad", mecanico.Especialidad),
-                    new SqlParameter("@experiencia", mecanico.Experiencia),
-                    new SqlParameter("@id", mecanico.Id)
+                    new SqlParameter("@experiencia", mecanico.Experiencia)
                 };
 
                 return obj_capa_datos.EjecutarSPSql(nombreStoredProcedure, parametros);

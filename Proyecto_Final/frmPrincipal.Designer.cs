@@ -34,15 +34,16 @@
             btnMecanico = new Button();
             btnMantenimiento = new Button();
             groupBox2 = new GroupBox();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
             label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             groupBox1 = new GroupBox();
+            btnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -73,7 +74,7 @@
             // btnMecanico
             // 
             btnMecanico.Image = (Image)resources.GetObject("btnMecanico.Image");
-            btnMecanico.Location = new Point(766, 54);
+            btnMecanico.Location = new Point(692, 54);
             btnMecanico.Margin = new Padding(4);
             btnMecanico.Name = "btnMecanico";
             btnMecanico.Size = new Size(150, 146);
@@ -110,35 +111,15 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Integrantes";
             // 
-            // label4
+            // label8
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(16, 42);
-            label4.Margin = new Padding(4, 0, 4, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(185, 20);
-            label4.TabIndex = 0;
-            label4.Text = "- Bravo Domenica";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(16, 71);
-            label5.Margin = new Padding(4, 0, 4, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(161, 20);
-            label5.TabIndex = 1;
-            label5.Text = "- Ocampo Adela";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(16, 102);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(177, 20);
-            label6.TabIndex = 2;
-            label6.Text = "- Fajardo Bianca";
+            label8.AutoSize = true;
+            label8.Location = new Point(16, 165);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(156, 20);
+            label8.TabIndex = 4;
+            label8.Text = "- Azua Marlon";
             // 
             // label7
             // 
@@ -150,15 +131,35 @@
             label7.TabIndex = 3;
             label7.Text = "- Maldonado Alejandro";
             // 
-            // label8
+            // label6
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(16, 165);
-            label8.Margin = new Padding(4, 0, 4, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(156, 20);
-            label8.TabIndex = 4;
-            label8.Text = "- Azua Marlon";
+            label6.AutoSize = true;
+            label6.Location = new Point(16, 102);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(177, 20);
+            label6.TabIndex = 2;
+            label6.Text = "- Fajardo Bianca";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(16, 71);
+            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(161, 20);
+            label5.TabIndex = 1;
+            label5.Text = "- Ocampo Adela";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(16, 42);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(185, 20);
+            label4.TabIndex = 0;
+            label4.Text = "- Bravo Domenica";
             // 
             // label1
             // 
@@ -175,7 +176,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(792, 216);
+            label2.Location = new Point(718, 216);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(104, 20);
@@ -196,6 +197,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.PeachPuff;
+            groupBox1.Controls.Add(btnCancelar);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
@@ -212,12 +214,24 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
+            // btnCancelar
+            // 
+            btnCancelar.BackgroundImage = (Image)resources.GetObject("btnCancelar.BackgroundImage");
+            btnCancelar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnCancelar.Location = new Point(931, 13);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(60, 60);
+            btnCancelar.TabIndex = 9;
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 562);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "frmPrincipal";
             Text = "frmPrincipal";
@@ -245,5 +259,6 @@
         private Label label2;
         private Label label3;
         private GroupBox groupBox1;
+        private Button btnCancelar;
     }
 }

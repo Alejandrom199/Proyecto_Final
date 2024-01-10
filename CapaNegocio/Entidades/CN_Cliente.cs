@@ -45,6 +45,20 @@ namespace CapaNegocio.Entidades
             }
         }
 
+        public DataTable GetClientesByID()
+        {
+            try
+            {
+                string nombreStoredProcedure = "SP_OBTENER_CLIENTE_BY_ID";
+
+                return obj_capa_datos.EjecutarSPSelect(nombreStoredProcedure, null);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al obtener Cliente por ID." + e.Message);
+            }
+        }
+
         public bool CrearCliente(CN_Cliente cliente)
         {
             try

@@ -18,9 +18,12 @@ namespace CapaVisual
         public frmClientes()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
             btnCancelar.Enabled = true;
             MaximizeBox = false;
             tbxId.ReadOnly = true;
+            //Rellenar todo el datagridview ampliando las columnas
+            dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void frmClientes_Load(object sender, EventArgs e)
@@ -99,6 +102,25 @@ namespace CapaVisual
                 MessageBox.Show(ex.ToString());
             }
         }
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            isNuevo = true;
+            SetearCampos();
+
+            btnNuevo.Enabled = false;
+            btnNuevo.BackColor = Color.PaleVioletRed;
+
+            btnAgregar.Enabled = true;
+            btnAgregar.BackColor = Color.Transparent;
+
+            btnModificar.Enabled = false;
+            btnModificar.BackColor = Color.PaleVioletRed;
+
+            btnEliminar.Enabled = false;
+            btnEliminar.BackColor = Color.PaleVioletRed;
+
+            DisableCampos(false);
+        }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -142,26 +164,6 @@ namespace CapaVisual
                 }
 
             }
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            isNuevo = true;
-            SetearCampos();
-
-            btnNuevo.Enabled = false;
-            btnNuevo.BackColor = Color.PaleVioletRed;
-
-            btnAgregar.Enabled = true;
-            btnAgregar.BackColor = Color.Transparent;
-
-            btnModificar.Enabled = false;
-            btnModificar.BackColor = Color.PaleVioletRed;
-
-            btnEliminar.Enabled = false;
-            btnEliminar.BackColor = Color.PaleVioletRed;
-
-            DisableCampos(false);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

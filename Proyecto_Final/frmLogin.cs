@@ -15,6 +15,7 @@ namespace CapaVisual
         public frmLogin()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
 

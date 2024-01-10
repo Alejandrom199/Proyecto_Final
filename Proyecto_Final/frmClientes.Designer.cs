@@ -49,9 +49,11 @@
             btnEliminar = new Button();
             btnCancelar = new Button();
             groupBox2 = new GroupBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dgvClientes
@@ -60,19 +62,20 @@
             dgvClientes.AllowUserToDeleteRows = false;
             dgvClientes.BackgroundColor = SystemColors.ButtonShadow;
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Location = new Point(10, 215);
+            dgvClientes.Location = new Point(10, 331);
             dgvClientes.Margin = new Padding(2);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
             dgvClientes.RowHeadersWidth = 62;
             dgvClientes.RowTemplate.Height = 33;
-            dgvClientes.Size = new Size(728, 239);
+            dgvClientes.Size = new Size(1251, 336);
             dgvClientes.TabIndex = 0;
             dgvClientes.CellClick += dgvClientes_CellClick;
             // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.Plum;
+            groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(tbxCedula);
             groupBox1.Controls.Add(tbxDireccion);
             groupBox1.Controls.Add(tbxTelefono);
@@ -86,120 +89,120 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox1.Location = new Point(10, 8);
+            groupBox1.Location = new Point(11, 11);
             groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(2);
-            groupBox1.Size = new Size(613, 193);
+            groupBox1.Size = new Size(969, 302);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cliente";
             // 
             // tbxCedula
             // 
-            tbxCedula.Location = new Point(484, 85);
+            tbxCedula.Location = new Point(446, 135);
             tbxCedula.Margin = new Padding(2);
             tbxCedula.Name = "tbxCedula";
-            tbxCedula.Size = new Size(121, 23);
+            tbxCedula.Size = new Size(203, 26);
             tbxCedula.TabIndex = 11;
             // 
             // tbxDireccion
             // 
-            tbxDireccion.Location = new Point(97, 144);
+            tbxDireccion.Location = new Point(125, 243);
             tbxDireccion.Margin = new Padding(2);
             tbxDireccion.Name = "tbxDireccion";
-            tbxDireccion.Size = new Size(271, 23);
+            tbxDireccion.Size = new Size(338, 26);
             tbxDireccion.TabIndex = 10;
             // 
             // tbxTelefono
             // 
-            tbxTelefono.Location = new Point(470, 144);
+            tbxTelefono.Location = new Point(621, 243);
             tbxTelefono.Margin = new Padding(2);
             tbxTelefono.Name = "tbxTelefono";
-            tbxTelefono.Size = new Size(135, 23);
+            tbxTelefono.Size = new Size(203, 26);
             tbxTelefono.TabIndex = 9;
             // 
             // tbxApellido
             // 
-            tbxApellido.Location = new Point(288, 85);
+            tbxApellido.Location = new Point(795, 135);
             tbxApellido.Margin = new Padding(2);
             tbxApellido.Name = "tbxApellido";
-            tbxApellido.Size = new Size(121, 23);
+            tbxApellido.Size = new Size(147, 26);
             tbxApellido.TabIndex = 8;
             // 
             // tbxNombre
             // 
-            tbxNombre.Location = new Point(80, 85);
+            tbxNombre.Location = new Point(103, 135);
             tbxNombre.Margin = new Padding(2);
             tbxNombre.Name = "tbxNombre";
-            tbxNombre.Size = new Size(121, 23);
+            tbxNombre.Size = new Size(203, 26);
             tbxNombre.TabIndex = 7;
             // 
             // tbxId
             // 
-            tbxId.Location = new Point(80, 24);
+            tbxId.Location = new Point(103, 55);
             tbxId.Margin = new Padding(2);
             tbxId.Name = "tbxId";
-            tbxId.Size = new Size(38, 23);
+            tbxId.Size = new Size(102, 26);
             tbxId.TabIndex = 6;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(4, 151);
+            label6.Location = new Point(9, 246);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(89, 16);
+            label6.Size = new Size(112, 20);
             label6.TabIndex = 5;
             label6.Text = "Direccion:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(383, 151);
+            label5.Location = new Point(516, 246);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(83, 16);
+            label5.Size = new Size(101, 20);
             label5.TabIndex = 4;
             label5.Text = "Telefono:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(413, 92);
+            label4.Location = new Point(706, 138);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(67, 16);
+            label4.Size = new Size(85, 20);
             label4.TabIndex = 3;
             label4.Text = "Cedula:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(205, 92);
+            label3.Location = new Point(344, 138);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(79, 16);
+            label3.Size = new Size(98, 20);
             label3.TabIndex = 2;
             label3.Text = "Apellido:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(4, 92);
+            label2.Location = new Point(9, 138);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(72, 16);
+            label2.Size = new Size(90, 20);
             label2.TabIndex = 1;
             label2.Text = "Nombre:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(4, 31);
+            label1.Location = new Point(9, 58);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(26, 16);
+            label1.Size = new Size(33, 20);
             label1.TabIndex = 0;
             label1.Text = "ID:";
             // 
@@ -209,11 +212,11 @@
             btnNuevo.BackgroundImage = (Image)resources.GetObject("btnNuevo.BackgroundImage");
             btnNuevo.BackgroundImageLayout = ImageLayout.Stretch;
             btnNuevo.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnNuevo.Location = new Point(4, 11);
+            btnNuevo.Location = new Point(39, 30);
             btnNuevo.Margin = new Padding(2);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.RightToLeft = RightToLeft.No;
-            btnNuevo.Size = new Size(48, 48);
+            btnNuevo.Size = new Size(60, 60);
             btnNuevo.TabIndex = 2;
             btnNuevo.UseVisualStyleBackColor = false;
             btnNuevo.Click += btnNuevo_Click;
@@ -223,10 +226,10 @@
             btnAgregar.BackgroundImage = (Image)resources.GetObject("btnAgregar.BackgroundImage");
             btnAgregar.BackgroundImageLayout = ImageLayout.Stretch;
             btnAgregar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAgregar.Location = new Point(56, 11);
+            btnAgregar.Location = new Point(159, 30);
             btnAgregar.Margin = new Padding(2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(48, 48);
+            btnAgregar.Size = new Size(60, 60);
             btnAgregar.TabIndex = 3;
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
@@ -236,10 +239,10 @@
             btnModificar.BackgroundImage = (Image)resources.GetObject("btnModificar.BackgroundImage");
             btnModificar.BackgroundImageLayout = ImageLayout.Stretch;
             btnModificar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnModificar.Location = new Point(4, 76);
+            btnModificar.Location = new Point(39, 126);
             btnModificar.Margin = new Padding(2);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(48, 48);
+            btnModificar.Size = new Size(60, 60);
             btnModificar.TabIndex = 4;
             btnModificar.UseVisualStyleBackColor = true;
             btnModificar.Click += btnModificar_Click;
@@ -249,10 +252,10 @@
             btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
             btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
             btnEliminar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEliminar.Location = new Point(56, 76);
+            btnEliminar.Location = new Point(159, 126);
             btnEliminar.Margin = new Padding(2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(48, 48);
+            btnEliminar.Size = new Size(60, 60);
             btnEliminar.TabIndex = 5;
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
@@ -262,10 +265,10 @@
             btnCancelar.BackgroundImage = (Image)resources.GetObject("btnCancelar.BackgroundImage");
             btnCancelar.BackgroundImageLayout = ImageLayout.Zoom;
             btnCancelar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancelar.Location = new Point(30, 135);
+            btnCancelar.Location = new Point(101, 219);
             btnCancelar.Margin = new Padding(2);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(48, 48);
+            btnCancelar.Size = new Size(60, 60);
             btnCancelar.TabIndex = 6;
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
@@ -278,23 +281,34 @@
             groupBox2.Controls.Add(btnModificar);
             groupBox2.Controls.Add(btnAgregar);
             groupBox2.Controls.Add(btnNuevo);
-            groupBox2.Location = new Point(627, 8);
+            groupBox2.Location = new Point(999, 13);
             groupBox2.Margin = new Padding(2);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(2);
-            groupBox2.Size = new Size(111, 193);
+            groupBox2.Size = new Size(262, 300);
             groupBox2.TabIndex = 7;
             groupBox2.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(852, 24);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(90, 90);
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
+            // 
             // frmClientes
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PeachPuff;
-            ClientSize = new Size(751, 463);
+            ClientSize = new Size(1275, 681);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(dgvClientes);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2);
             Name = "frmClientes";
             Text = "frmClientes";
@@ -303,6 +317,7 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -328,5 +343,6 @@
         private Button btnEliminar;
         private Button btnCancelar;
         private GroupBox groupBox2;
+        private PictureBox pictureBox1;
     }
 }

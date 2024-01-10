@@ -17,9 +17,13 @@ namespace CapaVisual
         public frmMecanico()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
             btnCancelar.Enabled = true;
             MaximizeBox = false;
             tbxId.ReadOnly = true;
+            //Rellenar todo el datagridview ampliando las columnas
+            dgvMecanicos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private void frmMecanico_Load(object sender, EventArgs e)
@@ -32,10 +36,19 @@ namespace CapaVisual
                 DisableCampos(true);
 
                 btnNuevo.Enabled = true;
+                btnNuevo.BackColor = Color.Transparent;
+
                 btnAgregar.Enabled = false;
+                btnAgregar.BackColor = Color.PaleVioletRed;
+
                 btnModificar.Enabled = false;
+                btnModificar.BackColor = Color.PaleVioletRed;
+
                 btnEliminar.Enabled = false;
+                btnEliminar.BackColor = Color.PaleVioletRed;
+
                 btnCancelar.Enabled = true;
+                btnCancelar.BackColor = Color.Transparent;
             }
             catch (Exception ex)
             {
@@ -94,9 +107,16 @@ namespace CapaVisual
             SetearCampos();
 
             btnNuevo.Enabled = false;
+            btnNuevo.BackColor = Color.PaleVioletRed;
+
             btnAgregar.Enabled = true;
+            btnAgregar.BackColor = Color.Transparent;
+
             btnModificar.Enabled = false;
+            btnModificar.BackColor = Color.PaleVioletRed;
+
             btnEliminar.Enabled = false;
+            btnEliminar.BackColor = Color.PaleVioletRed;
 
             DisableCampos(false);
         }
@@ -122,9 +142,16 @@ namespace CapaVisual
                         DisableCampos(true);
 
                         btnNuevo.Enabled = true;
+                        btnNuevo.BackColor = Color.Transparent;
+
                         btnAgregar.Enabled = false;
+                        btnAgregar.BackColor = Color.PaleVioletRed;
+
                         btnModificar.Enabled = false;
+                        btnModificar.BackColor = Color.PaleVioletRed;
+
                         btnEliminar.Enabled = false;
+                        btnEliminar.BackColor = Color.PaleVioletRed;
                     }
                     else { }
 
@@ -156,9 +183,16 @@ namespace CapaVisual
                     DisableCampos(true);
 
                     btnNuevo.Enabled = true;
+                    btnNuevo.BackColor = Color.Transparent;
+
                     btnAgregar.Enabled = false;
+                    btnAgregar.BackColor = Color.PaleVioletRed;
+
                     btnModificar.Enabled = false;
+                    btnModificar.BackColor = Color.PaleVioletRed;
+
                     btnEliminar.Enabled = false;
+                    btnEliminar.BackColor = Color.PaleVioletRed;
                 }
                 else
                 {
@@ -177,9 +211,16 @@ namespace CapaVisual
                 CargarGridMecanicos();
 
                 btnNuevo.Enabled = true;
+                btnNuevo.BackColor = Color.Transparent;
+
                 btnAgregar.Enabled = false;
+                btnAgregar.BackColor = Color.PaleVioletRed;
+
                 btnModificar.Enabled = false;
+                btnModificar.BackColor = Color.PaleVioletRed;
+
                 btnEliminar.Enabled = false;
+                btnEliminar.BackColor = Color.PaleVioletRed;
 
                 DisableCampos(true);
             }
@@ -204,9 +245,16 @@ namespace CapaVisual
                 tbxExperiencia.Text = dgvMecanicos.Rows[e.RowIndex].Cells[5].Value.ToString();
 
                 btnNuevo.Enabled = false;
+                btnNuevo.BackColor = Color.PaleVioletRed;
+
                 btnAgregar.Enabled = false;
+                btnAgregar.BackColor = Color.PaleVioletRed;
+
                 btnModificar.Enabled = true;
+                btnModificar.BackColor = Color.Transparent;
+
                 btnEliminar.Enabled = true;
+                btnEliminar.BackColor = Color.Transparent;
             }
             else { }
         }

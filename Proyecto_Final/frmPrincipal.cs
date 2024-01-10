@@ -15,6 +15,7 @@ namespace CapaVisual
         public frmPrincipal()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
@@ -33,6 +34,16 @@ namespace CapaVisual
         {
             frmMantenimiento pantallaMantenimiento = new frmMantenimiento();
             pantallaMantenimiento.Show();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas cerrar la aplicación?", "Cerrar aplicación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }
