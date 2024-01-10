@@ -197,13 +197,13 @@ namespace CapaVisual
                 catch (Exception ex)
                 {
                     MessageBox.Show("Rellene todos los datos");
-                    MessageBox.Show("cliente:"+cbxCliente.Text);
-                    MessageBox.Show("id cliente:"+obj_mantenimiento.Cliente.ToString());
+                    MessageBox.Show("cliente:" + cbxCliente.Text);
+                    MessageBox.Show("id cliente:" + obj_mantenimiento.Cliente.ToString());
                     MessageBox.Show("mecanico:" + cbxMecanico.Text);
-                    MessageBox.Show("id mecanico"+obj_mantenimiento.Mecanico.ToString());
-                    MessageBox.Show("fecha: "+obj_mantenimiento.Fecha.ToString());
-                    MessageBox.Show("vehiculo marca: "+obj_mantenimiento.Vehiculo_Marca);
-                    MessageBox.Show("vehiculo color: "+obj_mantenimiento.Vehiculo_Color);
+                    MessageBox.Show("id mecanico" + obj_mantenimiento.Mecanico.ToString());
+                    MessageBox.Show("fecha: " + obj_mantenimiento.Fecha.ToString());
+                    MessageBox.Show("vehiculo marca: " + obj_mantenimiento.Vehiculo_Marca);
+                    MessageBox.Show("vehiculo color: " + obj_mantenimiento.Vehiculo_Color);
                     MessageBox.Show("vehiculo modelo: " + obj_mantenimiento.Vehiculo_Modelo);
                     MessageBox.Show("vehiculo placa: " + obj_mantenimiento.Vehiculo_Placa);
                     MessageBox.Show("diagnostico: " + obj_mantenimiento.Diagnostico);
