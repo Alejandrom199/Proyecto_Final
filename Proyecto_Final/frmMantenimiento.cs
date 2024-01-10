@@ -13,7 +13,7 @@ namespace CapaVisual
 {
     public partial class frmMantenimiento : Form
     {
-        CN_Mantenimiento obj_mantenimiento = new CN_Mantenimiento();
+        /*CN_Mantenimiento obj_mantenimiento = new CN_Mantenimiento();
         public frmMantenimiento()
         {
             InitializeComponent();
@@ -112,6 +112,6 @@ namespace CapaVisual
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
-        }
+        }*/
     }
 }
