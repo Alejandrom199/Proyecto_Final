@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
             dgvClientes = new DataGridView();
             groupBox1 = new GroupBox();
+            pictureBox1 = new PictureBox();
             tbxCedula = new TextBox();
             tbxDireccion = new TextBox();
             tbxTelefono = new TextBox();
@@ -49,11 +50,10 @@
             btnEliminar = new Button();
             btnCancelar = new Button();
             groupBox2 = new GroupBox();
-            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // dgvClientes
@@ -98,12 +98,22 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Cliente";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(852, 24);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(90, 90);
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
+            // 
             // tbxCedula
             // 
-            tbxCedula.Location = new Point(446, 135);
+            tbxCedula.Location = new Point(795, 135);
             tbxCedula.Margin = new Padding(2);
             tbxCedula.Name = "tbxCedula";
-            tbxCedula.Size = new Size(203, 26);
+            tbxCedula.Size = new Size(147, 26);
             tbxCedula.TabIndex = 11;
             // 
             // tbxDireccion
@@ -124,10 +134,10 @@
             // 
             // tbxApellido
             // 
-            tbxApellido.Location = new Point(795, 135);
+            tbxApellido.Location = new Point(446, 135);
             tbxApellido.Margin = new Padding(2);
             tbxApellido.Name = "tbxApellido";
-            tbxApellido.Size = new Size(147, 26);
+            tbxApellido.Size = new Size(206, 26);
             tbxApellido.TabIndex = 8;
             // 
             // tbxNombre
@@ -289,16 +299,6 @@
             groupBox2.TabIndex = 7;
             groupBox2.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(852, 24);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(90, 90);
-            pictureBox1.TabIndex = 12;
-            pictureBox1.TabStop = false;
-            // 
             // frmClientes
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -316,8 +316,8 @@
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox2.ResumeLayout(false);
             ResumeLayout(false);
         }
 

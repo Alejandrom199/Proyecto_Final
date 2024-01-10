@@ -59,6 +59,36 @@ namespace CapaNegocio.Entidades
                 throw new Exception("Error al obtener Mecanico por ID." + e.Message);
             }
         }
+
+        public int GetMecanicoIDByName(string nombre)
+        {
+            try
+            {
+                string nombreStoredProcedure = "SP_RETORNAR_MECANICO_BY_NOMBRE";
+
+                SqlParameter[] parametros = new SqlParameter[]
+                {
+            new SqlParameter("@nombre", nombre)
+                };
+
+                // Utiliza ExecuteScalar para obtener un solo valor
+                object result = obj_capa_datos.EjecutarSPSelectScalar(nombreStoredProcedure, parametros);
+
+                // Convierte el resultado a entero
+                if (result != null && result != DBNull.Value)
+                {
+                    return Convert.ToInt32(result);
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el nombre de Cliente por ID." + ex.Message);
+            }
+        }
         public bool CrearMecanico(CN_Mecanico mecanico)
         {
             try

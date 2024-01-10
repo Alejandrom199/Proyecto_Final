@@ -59,7 +59,7 @@ namespace CapaNegocio.Entidades
             }
         }
 
-        /*public int GetCLienteIDByName(string nombre)
+        public int GetCLienteIDByName(string nombre)
         {
             try
             {
@@ -67,18 +67,28 @@ namespace CapaNegocio.Entidades
 
                 SqlParameter[] parametros = new SqlParameter[]
                 {
-                    new SqlParameter("@nombre", nombre),
-
+            new SqlParameter("@nombre", nombre)
                 };
 
-                return Convert.ToInt32(obj_capa_datos.EjecutarSPSelect(nombreStoredProcedure, parametros));
+                // Utiliza ExecuteScalar para obtener un solo valor
+                object result = obj_capa_datos.EjecutarSPSelectScalar(nombreStoredProcedure, parametros);
 
+                // Convierte el resultado a entero
+                if (result != null && result != DBNull.Value)
+                {
+                    return Convert.ToInt32(result);
+                }
+                else
+                {
+                    // Maneja el caso en el que el resultado es nulo o DBNull.Value
+                    return 0; // O un valor predeterminado según tus requisitos
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception("Error al obtener el nombre de Cliente por ID." + ex.Message);
             }
-        }*/
+        }
 
         public bool CrearCliente(CN_Cliente cliente)
         {

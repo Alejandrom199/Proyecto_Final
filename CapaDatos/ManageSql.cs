@@ -59,5 +59,26 @@ namespace CapaDatos
                 return tabla;
             }
         }
+
+        public object EjecutarSPSelectScalar(string storedProcedureName, SqlParameter[] parameters)
+        {
+            var command = new SqlCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = storedProcedureName;
+
+            if (parameters != null)
+            {
+                command.Parameters.AddRange(parameters);
+            }
+
+            command.Connection = conn.AbrirConexion();
+
+            // Utiliza ExecuteScalar para obtener un solo valor
+            object result = command.ExecuteScalar();
+
+            conn.CerrarConexion();
+
+            return result;
+        }
     }
 }

@@ -25,10 +25,16 @@ namespace CapaNegocio.Entidades
         private string trabajosRealizados;
         private string tipoMantenimiento;
         private string repuestos;
-        private decimal valor_repuestos;
-        private decimal totalPagar;
+        private float valor_repuestos;
+        private float totalPagar;
+        public CN_Mantenimiento()
+        {
+            repuestos = "n/a";
+            valor_repuestos = 0;
+            totalPagar = 0;
+        }
 
-        public CN_Mantenimiento(int id, int cliente, int mecanico, DateTime fecha, string vehiculo_placa, string vehiculo_marca, string vehiculo_modelo, string vehiculo_color, string diagnostico, string trabajosRealizados, string tipoMantenimiento, string repuestos, decimal valor_repuestos, decimal totalPagar)
+        public CN_Mantenimiento(int id, int cliente, int mecanico, DateTime fecha, string vehiculo_placa, string vehiculo_marca, string vehiculo_modelo, string vehiculo_color, string diagnostico, string trabajosRealizados, string tipoMantenimiento, string repuestos, float valor_repuestos, float totalPagar)
         {
             this.id = id;
             this.cliente = cliente;
@@ -46,10 +52,6 @@ namespace CapaNegocio.Entidades
             this.totalPagar = totalPagar;
         }
 
-        public CN_Mantenimiento()
-        {
-
-        }
 
         public int Id { get => id; set => id = value; }
         public int Cliente { get => cliente; set =>  cliente = value; }
@@ -82,8 +84,8 @@ namespace CapaNegocio.Entidades
         public string TrabajosRealizados { get => trabajosRealizados; set => trabajosRealizados = value; }
         public string TipoMantenimiento { get => tipoMantenimiento; set => tipoMantenimiento = value; }
         public string Repuestos { get => repuestos; set =>repuestos = value; }
-        public decimal Valor_Repuestos { get => valor_repuestos; set => valor_repuestos = value; }
-        public decimal TotalPagar { get => totalPagar; set => totalPagar = value; }
+        public float Valor_Repuestos { get => valor_repuestos; set => valor_repuestos = value; }
+        public float TotalPagar { get => totalPagar; set => totalPagar = value; }
 
         public DataTable GetListaMantenimientos()
         {
@@ -138,10 +140,10 @@ namespace CapaNegocio.Entidades
                     new SqlParameter("@id_cliente", mantenimiento.cliente),
                     new SqlParameter("@id_mecanico",mantenimiento.mecanico),
                     new SqlParameter("@fecha", mantenimiento.fecha),
-                    new SqlParameter("@vehiculo_placa", mantenimiento.Vehiculo_Placa),
-                    new SqlParameter("@vehiculo_marca", mantenimiento.Vehiculo_Marca),
-                    new SqlParameter("@vehiculo_modelo", mantenimiento.Vehiculo_Modelo),
-                    new SqlParameter("@vehiculo_color", mantenimiento.Vehiculo_Color),
+                    new SqlParameter("@vehiculo_placa", mantenimiento.vehiculo_placa),
+                    new SqlParameter("@vehiculo_marca", mantenimiento.vehiculo_marca),
+                    new SqlParameter("@vehiculo_modelo", mantenimiento.vehiculo_modelo),
+                    new SqlParameter("@vehiculo_color", mantenimiento.vehiculo_color),
                     new SqlParameter("@diagnostico", mantenimiento.diagnostico),
                     new SqlParameter("@trabajos_realizados", mantenimiento.trabajosRealizados),
                     new SqlParameter("@tipo_mantenimiento", mantenimiento.tipoMantenimiento),

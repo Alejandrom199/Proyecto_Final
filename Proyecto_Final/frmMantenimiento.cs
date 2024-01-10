@@ -151,6 +151,70 @@ namespace CapaVisual
             DisableCampos(false);
 
         }
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (isNuevo)
+            {
+                try
+                {
+                    obj_mantenimiento.Cliente = NombreAEnteroCliente(cbxCliente.Text);
+                    obj_mantenimiento.Mecanico = NombreAEnteroMecanico(cbxMecanico.Text);
+                    obj_mantenimiento.Fecha = dtpFecha.Value.ToUniversalTime();
+                    obj_mantenimiento.Vehiculo_Marca = tbxMarca.Text;
+                    obj_mantenimiento.Vehiculo_Color = tbxColor.Text;
+                    obj_mantenimiento.Vehiculo_Modelo = tbxModelo.Text;
+                    obj_mantenimiento.Vehiculo_Placa = tbxPlaca.Text;
+                    obj_mantenimiento.Diagnostico = tbxDiagnostico.Text;
+                    obj_mantenimiento.TrabajosRealizados = rtbxTrabajosRealizados.Text;
+                    obj_mantenimiento.TipoMantenimiento = cbxTipo.Text;
+                    obj_mantenimiento.Repuestos = gbxRepuestos.Text;
+                    obj_mantenimiento.Valor_Repuestos = Convert.ToInt32(tbxValorRepuestos.Text);
+                    obj_mantenimiento.TotalPagar = Convert.ToInt32(tbxTotalPagar.Text);
+
+                    var resultado = obj_mantenimiento.CrearMantenimiento(obj_mantenimiento);
+
+                    if (resultado)
+                    {
+                        MessageBox.Show("Registro Creado con Éxito.");
+                        CargarGridMantenimientos();
+                        DisableCampos(true);
+
+                        btnNuevo.Enabled = true;
+                        btnNuevo.BackColor = Color.Transparent;
+
+                        btnAgregar.Enabled = false;
+                        btnAgregar.BackColor = Color.PaleVioletRed;
+
+                        btnModificar.Enabled = false;
+                        btnModificar.BackColor = Color.PaleVioletRed;
+
+                        btnEliminar.Enabled = false;
+                        btnEliminar.BackColor = Color.PaleVioletRed;
+                    }
+                    else { }
+                    isNuevo = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Rellene todos los datos");
+                    MessageBox.Show("cliente:"+cbxCliente.Text);
+                    MessageBox.Show("id cliente:"+obj_mantenimiento.Cliente.ToString());
+                    MessageBox.Show("mecanico:" + cbxMecanico.Text);
+                    MessageBox.Show("id mecanico"+obj_mantenimiento.Mecanico.ToString());
+                    MessageBox.Show("fecha: "+obj_mantenimiento.Fecha.ToString());
+                    MessageBox.Show("vehiculo marca: "+obj_mantenimiento.Vehiculo_Marca);
+                    MessageBox.Show("vehiculo color: "+obj_mantenimiento.Vehiculo_Color);
+                    MessageBox.Show("vehiculo modelo: " + obj_mantenimiento.Vehiculo_Modelo);
+                    MessageBox.Show("vehiculo placa: " + obj_mantenimiento.Vehiculo_Placa);
+                    MessageBox.Show("diagnostico: " + obj_mantenimiento.Diagnostico);
+                    MessageBox.Show("trabajos realizados: " + obj_mantenimiento.TrabajosRealizados);
+                    MessageBox.Show("tipo de mantenimiento: " + obj_mantenimiento.TipoMantenimiento);
+                    MessageBox.Show("repuestos: " + obj_mantenimiento.Repuestos);
+                    MessageBox.Show("valor repuestos: " + obj_mantenimiento.Valor_Repuestos.ToString());
+                    MessageBox.Show("total a pagar" + obj_mantenimiento.TotalPagar.ToString());
+                }
+            }
+        }
 
         private void LlenarComboBoxClientes()
         {
@@ -160,10 +224,15 @@ namespace CapaVisual
             cbxCliente.DataSource = tabla;
         }
 
-        /*private int NombreAEnteroCliente(string nombre)
+        private int NombreAEnteroCliente(string nombre)
         {
-            return Convert.ToInt32(obj_cliente.GetCLienteIDByName(nombre));
-        }*/
+            return obj_cliente.GetCLienteIDByName(nombre);
+        }
+
+        private int NombreAEnteroMecanico(string nombre)
+        {
+            return obj_mecanico.GetMecanicoIDByName(nombre);
+        }
 
         private void LlenarComboBoxMecanicos()
         {
@@ -178,21 +247,9 @@ namespace CapaVisual
         {
             if (!isNuevo)
             {
-                obj_mantenimiento.Cliente = Convert.ToInt32(cbxCliente.Text);
-                obj_mantenimiento.Mecanico = Convert.ToInt32(cbxMecanico.Text);
-                obj_mantenimiento.Fecha = dtpFecha.Value.Date;
-                obj_mantenimiento.Vehiculo_Placa = tbxPlaca.Text;
-                obj_mantenimiento.Vehiculo_Marca = tbxMarca.Text;
-                obj_mantenimiento.Vehiculo_Modelo = tbxModelo.Text;
-                obj_mantenimiento.Vehiculo_Color = tbxColor.Text;
-                obj_mantenimiento.Diagnostico = tbxDiagnostico.Text;
-                obj_mantenimiento.TrabajosRealizados = rtbxTrabajosRealizados.Text;
-                obj_mantenimiento.TipoMantenimiento = cbxTipo.Text;
-                obj_mantenimiento.Repuestos = tbxRepuestos.Text;
-                obj_mantenimiento.Valor_Repuestos = Convert.ToInt32(tbxValorRepuestos.Text);
-                obj_mantenimiento.TotalPagar = Convert.ToInt32(tbxTotalPagar.Text);
 
-                if (obj_mecanico.ModificarMecanico(obj_mecanico))
+
+                if (obj_mantenimiento.ModificaMantenimiento(obj_mantenimiento))
                 {
                     MessageBox.Show("Registro actualizado!");
                     CargarGridMantenimientos();
@@ -302,44 +359,5 @@ namespace CapaVisual
             }
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            if (isNuevo)
-            {
-                try
-                {
-                    obj_mantenimiento.TotalPagar = Convert.ToInt32(tbxTotalPagar);
-                    
-                    var resultado = obj_mantenimiento.CrearMantenimiento(obj_mantenimiento);
-
-                    if (resultado)
-                    {
-                        MessageBox.Show("Registro Creado con Éxito.");
-                        CargarGridMantenimientos();
-                        DisableCampos(true);
-
-                        btnNuevo.Enabled = true;
-                        btnNuevo.BackColor = Color.Transparent;
-
-                        btnAgregar.Enabled = false;
-                        btnAgregar.BackColor = Color.PaleVioletRed;
-
-                        btnModificar.Enabled = false;
-                        btnModificar.BackColor = Color.PaleVioletRed;
-
-                        btnEliminar.Enabled = false;
-                        btnEliminar.BackColor = Color.PaleVioletRed;
-                    }
-                    else { }
-
-                    isNuevo = false;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Rellene todos los datos");
-                    MessageBox.Show(obj_mantenimiento.TotalPagar.ToString());
-                }
-            }
-        }
     }
 }
