@@ -206,61 +206,67 @@
             // btnNuevo
             // 
             btnNuevo.BackColor = Color.Transparent;
+            btnNuevo.BackgroundImage = (Image)resources.GetObject("btnNuevo.BackgroundImage");
+            btnNuevo.BackgroundImageLayout = ImageLayout.Stretch;
             btnNuevo.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnNuevo.Image = (Image)resources.GetObject("btnNuevo.Image");
-            btnNuevo.Location = new Point(42, 15);
+            btnNuevo.Location = new Point(29, 6);
             btnNuevo.Margin = new Padding(2);
             btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(112, 34);
+            btnNuevo.RightToLeft = RightToLeft.No;
+            btnNuevo.Size = new Size(60, 60);
             btnNuevo.TabIndex = 2;
             btnNuevo.UseVisualStyleBackColor = false;
             btnNuevo.Click += btnNuevo_Click;
             // 
             // btnAgregar
             // 
+            btnAgregar.BackgroundImage = (Image)resources.GetObject("btnAgregar.BackgroundImage");
+            btnAgregar.BackgroundImageLayout = ImageLayout.Stretch;
             btnAgregar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAgregar.Location = new Point(42, 55);
+            btnAgregar.Location = new Point(103, 6);
             btnAgregar.Margin = new Padding(2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(112, 34);
+            btnAgregar.Size = new Size(60, 60);
             btnAgregar.TabIndex = 3;
-            btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
             // 
             // btnModificar
             // 
+            btnModificar.BackgroundImage = (Image)resources.GetObject("btnModificar.BackgroundImage");
+            btnModificar.BackgroundImageLayout = ImageLayout.Stretch;
             btnModificar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnModificar.Location = new Point(42, 95);
+            btnModificar.Location = new Point(29, 74);
             btnModificar.Margin = new Padding(2);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(112, 34);
+            btnModificar.Size = new Size(60, 60);
             btnModificar.TabIndex = 4;
-            btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
             btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
+            btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
+            btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
             btnEliminar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEliminar.Location = new Point(42, 135);
+            btnEliminar.Location = new Point(103, 79);
             btnEliminar.Margin = new Padding(2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(112, 34);
+            btnEliminar.Size = new Size(60, 60);
             btnEliminar.TabIndex = 5;
-            btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
             // btnCancelar
             // 
+            btnCancelar.BackgroundImage = (Image)resources.GetObject("btnCancelar.BackgroundImage");
+            btnCancelar.BackgroundImageLayout = ImageLayout.Zoom;
             btnCancelar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancelar.Location = new Point(42, 175);
+            btnCancelar.Location = new Point(60, 146);
             btnCancelar.Margin = new Padding(2);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(112, 34);
+            btnCancelar.Size = new Size(60, 60);
             btnCancelar.TabIndex = 6;
-            btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 

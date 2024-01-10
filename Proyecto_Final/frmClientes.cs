@@ -21,7 +21,6 @@ namespace CapaVisual
             btnCancelar.Enabled = true;
             MaximizeBox = false;
             tbxId.ReadOnly = true;
-            btnNuevo.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void frmClientes_Load(object sender, EventArgs e)
@@ -39,6 +38,9 @@ namespace CapaVisual
                 btnModificar.Enabled = false;
                 btnEliminar.Enabled = false;
                 btnCancelar.Enabled = true;
+
+                btnNuevo.BackgroundImageLayout = ImageLayout.Zoom;
+
             }
             catch (Exception ex)
             {

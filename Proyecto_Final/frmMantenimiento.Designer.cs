@@ -87,7 +87,6 @@
             btnCancelar.TabIndex = 6;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnEliminar
             // 
@@ -99,7 +98,6 @@
             btnEliminar.TabIndex = 5;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnModificar
             // 
@@ -111,7 +109,6 @@
             btnModificar.TabIndex = 4;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
-            btnModificar.Click += btnModificar_Click;
             // 
             // btnAgregar
             // 
@@ -123,7 +120,6 @@
             btnAgregar.TabIndex = 3;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnNuevo
             // 
@@ -135,7 +131,6 @@
             btnNuevo.TabIndex = 2;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
-            btnNuevo.Click += btnNuevo_Click;
             // 
             // groupBox1
             // 
@@ -374,7 +369,6 @@
             Margin = new Padding(2, 2, 2, 2);
             Name = "frmMantenimiento";
             Text = "frmMantenimiento";
-            Load += frmMantenimiento_Load;
             groupBox2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
