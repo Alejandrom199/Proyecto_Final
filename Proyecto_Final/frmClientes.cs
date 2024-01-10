@@ -21,6 +21,7 @@ namespace CapaVisual
             btnCancelar.Enabled = true;
             MaximizeBox = false;
             tbxId.ReadOnly = true;
+            btnNuevo.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void frmClientes_Load(object sender, EventArgs e)

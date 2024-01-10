@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaDatos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -9,10 +10,12 @@ namespace CapaNegocio.Entidades
 {
     public class CN_Mantenimiento
     {
-        private string codigo;
-        private string mecanico;
-        private CN_Cliente cliente;
-        private string fecha;
+        /*private ManageSql obj_capa_datos = new ManageSql();
+
+        private string id;
+        private CN_Cliente id_cliente;
+        private CN_Mecanico id_mecanico;
+        private DateTime fecha;
         private CN_Vehiculo vehiculo;
         private string diagnostico;
         private string trabajosRealizados;
@@ -59,6 +62,6 @@ namespace CapaNegocio.Entidades
             {
                 throw new Exception("Error al obtener listado de Mecanicos." + e.Message);
             }
-        }
+        }*/
     }
 }
