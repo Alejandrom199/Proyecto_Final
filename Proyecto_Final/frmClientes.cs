@@ -34,12 +34,19 @@ namespace CapaVisual
                 DisableCampos(true);
 
                 btnNuevo.Enabled = true;
-                btnAgregar.Enabled = false;
-                btnModificar.Enabled = false;
-                btnEliminar.Enabled = false;
-                btnCancelar.Enabled = true;
+                btnNuevo.BackColor = Color.Transparent;
 
-                btnNuevo.BackgroundImageLayout = ImageLayout.Zoom;
+                btnAgregar.Enabled = false;
+                btnAgregar.BackColor = Color.PaleVioletRed;
+
+                btnModificar.Enabled = false;
+                btnModificar.BackColor = Color.PaleVioletRed;
+
+                btnEliminar.Enabled = false;
+                btnEliminar.BackColor = Color.PaleVioletRed;
+
+                btnCancelar.Enabled = true;
+                btnCancelar.BackColor = Color.Transparent;
 
             }
             catch (Exception ex)
@@ -114,9 +121,16 @@ namespace CapaVisual
                         DisableCampos(true);
 
                         btnNuevo.Enabled = true;
+                        btnNuevo.BackColor = Color.Transparent;
+
                         btnAgregar.Enabled = false;
+                        btnAgregar.BackColor = Color.PaleVioletRed;
+
                         btnModificar.Enabled = false;
+                        btnModificar.BackColor = Color.PaleVioletRed;
+
                         btnEliminar.Enabled = false;
+                        btnEliminar.BackColor = Color.PaleVioletRed;
                     }
                     else { }
 
@@ -136,9 +150,16 @@ namespace CapaVisual
             SetearCampos();
 
             btnNuevo.Enabled = false;
+            btnNuevo.BackColor = Color.PaleVioletRed;
+
             btnAgregar.Enabled = true;
+            btnAgregar.BackColor = Color.Transparent;
+
             btnModificar.Enabled = false;
+            btnModificar.BackColor = Color.PaleVioletRed;
+
             btnEliminar.Enabled = false;
+            btnEliminar.BackColor = Color.PaleVioletRed;
 
             DisableCampos(false);
         }
@@ -161,9 +182,17 @@ namespace CapaVisual
                     DisableCampos(true);
 
                     btnNuevo.Enabled = true;
+                    btnNuevo.BackColor = Color.Transparent;
+
                     btnAgregar.Enabled = false;
+                    btnAgregar.BackColor = Color.PaleVioletRed;
+
                     btnModificar.Enabled = false;
+                    btnModificar.BackColor = Color.PaleVioletRed;
+
                     btnEliminar.Enabled = false;
+                    btnEliminar.BackColor = Color.PaleVioletRed;
+
                 }
                 else
                 {
@@ -187,9 +216,17 @@ namespace CapaVisual
                 tbxDireccion.Text = dgvClientes.Rows[e.RowIndex].Cells[5].Value.ToString();
 
                 btnNuevo.Enabled = false;
+                btnNuevo.BackColor = Color.PaleVioletRed;
+
                 btnAgregar.Enabled = false;
+                btnAgregar.BackColor = Color.PaleVioletRed;
+
                 btnModificar.Enabled = true;
+                btnModificar.BackColor = Color.Transparent;
+
                 btnEliminar.Enabled = true;
+                btnEliminar.BackColor = Color.Transparent;
+
             }
             else { }
         }
@@ -204,9 +241,17 @@ namespace CapaVisual
                 CargarGridCandidatas();
 
                 btnNuevo.Enabled = true;
+                btnNuevo.BackColor = Color.Transparent;
+
                 btnAgregar.Enabled = false;
+                btnAgregar.BackColor = Color.PaleVioletRed;
+
                 btnModificar.Enabled = false;
+                btnModificar.BackColor = Color.PaleVioletRed;
+
                 btnEliminar.Enabled = false;
+                btnEliminar.BackColor = Color.PaleVioletRed;
+
 
                 DisableCampos(true);
             }
