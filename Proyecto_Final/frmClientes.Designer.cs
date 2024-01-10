@@ -49,19 +49,9 @@
             btnEliminar = new Button();
             btnCancelar = new Button();
             groupBox2 = new GroupBox();
-            groupBox3 = new GroupBox();
-            textBox2 = new TextBox();
-            label7 = new Label();
-            textBox1 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // dgvClientes
@@ -76,7 +66,7 @@
             dgvClientes.ReadOnly = true;
             dgvClientes.RowHeadersWidth = 62;
             dgvClientes.RowTemplate.Height = 33;
-            dgvClientes.Size = new Size(973, 239);
+            dgvClientes.Size = new Size(728, 239);
             dgvClientes.TabIndex = 0;
             dgvClientes.CellClick += dgvClientes_CellClick;
             // 
@@ -288,7 +278,7 @@
             groupBox2.Controls.Add(btnModificar);
             groupBox2.Controls.Add(btnAgregar);
             groupBox2.Controls.Add(btnNuevo);
-            groupBox2.Location = new Point(872, 8);
+            groupBox2.Location = new Point(627, 8);
             groupBox2.Margin = new Padding(2);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(2);
@@ -296,106 +286,12 @@
             groupBox2.TabIndex = 7;
             groupBox2.TabStop = false;
             // 
-            // groupBox3
-            // 
-            groupBox3.BackColor = Color.Plum;
-            groupBox3.Controls.Add(textBox2);
-            groupBox3.Controls.Add(label7);
-            groupBox3.Controls.Add(textBox1);
-            groupBox3.Controls.Add(textBox3);
-            groupBox3.Controls.Add(textBox4);
-            groupBox3.Controls.Add(label8);
-            groupBox3.Controls.Add(label9);
-            groupBox3.Controls.Add(label10);
-            groupBox3.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox3.Location = new Point(639, 8);
-            groupBox3.Margin = new Padding(2);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(2);
-            groupBox3.Size = new Size(217, 193);
-            groupBox3.TabIndex = 8;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Vehiculo";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(87, 144);
-            textBox2.Margin = new Padding(2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(121, 23);
-            textBox2.TabIndex = 13;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(4, 151);
-            label7.Margin = new Padding(2, 0, 2, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(55, 16);
-            label7.TabIndex = 12;
-            label7.Text = "Placa:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(87, 62);
-            textBox1.Margin = new Padding(2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(121, 23);
-            textBox1.TabIndex = 11;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(87, 101);
-            textBox3.Margin = new Padding(2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(121, 23);
-            textBox3.TabIndex = 9;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(87, 24);
-            textBox4.Margin = new Padding(2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(121, 23);
-            textBox4.TabIndex = 8;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(4, 108);
-            label8.Margin = new Padding(2, 0, 2, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(72, 16);
-            label8.TabIndex = 4;
-            label8.Text = "Modelo:";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(4, 69);
-            label9.Margin = new Padding(2, 0, 2, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(59, 16);
-            label9.TabIndex = 3;
-            label9.Text = "Color:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(4, 33);
-            label10.Margin = new Padding(2, 0, 2, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(62, 16);
-            label10.TabIndex = 2;
-            label10.Text = "Marca:";
-            // 
             // frmClientes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PeachPuff;
-            ClientSize = new Size(995, 471);
-            Controls.Add(groupBox3);
+            ClientSize = new Size(751, 463);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(dgvClientes);
@@ -407,8 +303,6 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -434,14 +328,5 @@
         private Button btnEliminar;
         private Button btnCancelar;
         private GroupBox groupBox2;
-        private GroupBox groupBox3;
-        private TextBox textBox1;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private Label label8;
-        private Label label9;
-        private Label label10;
-        private TextBox textBox2;
-        private Label label7;
     }
 }
