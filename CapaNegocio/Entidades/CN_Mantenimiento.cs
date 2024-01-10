@@ -24,6 +24,7 @@ namespace CapaNegocio.Entidades
         private string diagnostico;
         private string trabajosRealizados;
         private string tipoMantenimiento;
+        private string servicio;
         private string repuestos;
         private float valor_repuestos;
         private float totalPagar;
@@ -34,7 +35,7 @@ namespace CapaNegocio.Entidades
             totalPagar = 0;
         }
 
-        public CN_Mantenimiento(int id, int cliente, int mecanico, DateTime fecha, string vehiculo_placa, string vehiculo_marca, string vehiculo_modelo, string vehiculo_color, string diagnostico, string trabajosRealizados, string tipoMantenimiento, string repuestos, float valor_repuestos, float totalPagar)
+        public CN_Mantenimiento(int id, int cliente, int mecanico, DateTime fecha, string vehiculo_placa, string vehiculo_marca, string vehiculo_modelo, string vehiculo_color, string diagnostico, string trabajosRealizados, string tipoMantenimiento, string servicio, string repuestos, float valor_repuestos, float totalPagar)
         {
             this.id = id;
             this.cliente = cliente;
@@ -47,6 +48,7 @@ namespace CapaNegocio.Entidades
             this.diagnostico = diagnostico;
             this.trabajosRealizados = trabajosRealizados;
             this.tipoMantenimiento = tipoMantenimiento;
+            this.servicio = servicio;
             this.repuestos = repuestos;
             this.valor_repuestos = valor_repuestos;
             this.totalPagar = totalPagar;
@@ -83,6 +85,8 @@ namespace CapaNegocio.Entidades
         public string Diagnostico { get => diagnostico; set => diagnostico = value; }
         public string TrabajosRealizados { get => trabajosRealizados; set => trabajosRealizados = value; }
         public string TipoMantenimiento { get => tipoMantenimiento; set => tipoMantenimiento = value; }
+        
+        public string Servicio { get => servicio; set => servicio = value; }
         public string Repuestos { get => repuestos; set =>repuestos = value; }
         public float Valor_Repuestos { get => valor_repuestos; set => valor_repuestos = value; }
         public float TotalPagar { get => totalPagar; set => totalPagar = value; }
@@ -104,6 +108,8 @@ namespace CapaNegocio.Entidades
         public bool CrearMantenimiento(CN_Mantenimiento mantenimiento)
         {
 
+            try
+            {
                 string nombreStoredProcedure = "SP_CREATE_MANTENIMIENTOS";
 
                 SqlParameter[] parametros = new SqlParameter[]
@@ -118,14 +124,19 @@ namespace CapaNegocio.Entidades
                     new SqlParameter("@diagnostico", mantenimiento.diagnostico),
                     new SqlParameter("@trabajos_realizados", mantenimiento.trabajosRealizados),
                     new SqlParameter("@tipo_mantenimiento", mantenimiento.tipoMantenimiento),
+                    new SqlParameter("@servicio", mantenimiento.servicio),
                     new SqlParameter("@repuestos", mantenimiento.repuestos),
                     new SqlParameter("@valor_repuestos", mantenimiento.valor_repuestos),
                     new SqlParameter("@total_pagar", mantenimiento.totalPagar)
                 };
 
                 return obj_capa_datos.EjecutarSPSql(nombreStoredProcedure, parametros);
-            
 
+            }catch(Exception ex)
+            {
+                throw new Exception("Error al crear Mantenimiento: " + ex.Message);
+            }
+                
         }
 
         public bool ModificaMantenimiento(CN_Mantenimiento mantenimiento)
@@ -147,6 +158,7 @@ namespace CapaNegocio.Entidades
                     new SqlParameter("@diagnostico", mantenimiento.diagnostico),
                     new SqlParameter("@trabajos_realizados", mantenimiento.trabajosRealizados),
                     new SqlParameter("@tipo_mantenimiento", mantenimiento.tipoMantenimiento),
+                    new SqlParameter("@servicio", mantenimiento.servicio),
                     new SqlParameter("@repuestos", mantenimiento.repuestos),
                     new SqlParameter("@valor_repuestos", mantenimiento.valor_repuestos),
                     new SqlParameter("@total_pagar", mantenimiento.totalPagar)

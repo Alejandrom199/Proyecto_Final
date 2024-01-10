@@ -22,10 +22,14 @@ namespace CapaVisual
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-
+            cbxServicios.SelectedIndexChanged += cbxCliente_SelectedIndexChanged;
             btnCancelar.Enabled = true;
             MaximizeBox = false;
+
             tbxId.ReadOnly = true;
+            tbxTotalPagar.ReadOnly = true;
+            tbxTipo.ReadOnly = true;
+
             gbxRepuestos.Visible = false;
 
         }
@@ -67,10 +71,11 @@ namespace CapaVisual
                 tbxId.Enabled = false;
                 cbxMecanico.Enabled = false;
                 cbxCliente.Enabled = false;
-                cbxTipo.Enabled = false;
+                tbxTipo.Enabled = false;
                 dtpFecha.Enabled = false;
                 tbxDiagnostico.Enabled = false;
                 rtbxTrabajosRealizados.Enabled = false;
+                cbxServicios.Enabled = false;
                 tbxRepuestos.Enabled = false;
                 tbxValorRepuestos.Enabled = false;
                 tbxMarca.Enabled = false;
@@ -84,10 +89,11 @@ namespace CapaVisual
                 tbxId.Enabled = true;
                 cbxMecanico.Enabled = true;
                 cbxCliente.Enabled = true;
-                cbxTipo.Enabled = true;
+                tbxTipo.Enabled = true;
                 dtpFecha.Enabled = true;
                 tbxDiagnostico.Enabled = true;
                 rtbxTrabajosRealizados.Enabled = true;
+                cbxServicios.Enabled = true;
                 tbxRepuestos.Enabled = true;
                 tbxValorRepuestos.Enabled = true;
                 tbxMarca.Enabled = true;
@@ -105,7 +111,7 @@ namespace CapaVisual
             tbxId.Text = string.Empty;
             cbxMecanico.Text = string.Empty;
             cbxCliente.Text = string.Empty;
-            cbxTipo.Text = string.Empty;
+            tbxTipo.Text = string.Empty;
             dtpFecha.Text = string.Empty;
             tbxDiagnostico.Text = string.Empty;
             rtbxTrabajosRealizados.Text = string.Empty;
@@ -166,10 +172,13 @@ namespace CapaVisual
                     obj_mantenimiento.Vehiculo_Placa = tbxPlaca.Text;
                     obj_mantenimiento.Diagnostico = tbxDiagnostico.Text;
                     obj_mantenimiento.TrabajosRealizados = rtbxTrabajosRealizados.Text;
-                    obj_mantenimiento.TipoMantenimiento = cbxTipo.Text;
-                    obj_mantenimiento.Repuestos = gbxRepuestos.Text;
+                    obj_mantenimiento.TipoMantenimiento = tbxTipo.Text;
+                    obj_mantenimiento.Servicio = cbxServicios.Text;
+                    obj_mantenimiento.Repuestos = tbxRepuestos.Text;
                     obj_mantenimiento.Valor_Repuestos = Convert.ToInt32(tbxValorRepuestos.Text);
-                    obj_mantenimiento.TotalPagar = Convert.ToInt32(tbxTotalPagar.Text);
+                    obj_mantenimiento.TotalPagar = valorTotal();
+
+
 
                     var resultado = obj_mantenimiento.CrearMantenimiento(obj_mantenimiento);
 
@@ -192,26 +201,12 @@ namespace CapaVisual
                         btnEliminar.BackColor = Color.PaleVioletRed;
                     }
                     else { }
+
                     isNuevo = false;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Rellene todos los datos");
-                    MessageBox.Show("cliente:" + cbxCliente.Text);
-                    MessageBox.Show("id cliente:" + obj_mantenimiento.Cliente.ToString());
-                    MessageBox.Show("mecanico:" + cbxMecanico.Text);
-                    MessageBox.Show("id mecanico" + obj_mantenimiento.Mecanico.ToString());
-                    MessageBox.Show("fecha: " + obj_mantenimiento.Fecha.ToString());
-                    MessageBox.Show("vehiculo marca: " + obj_mantenimiento.Vehiculo_Marca);
-                    MessageBox.Show("vehiculo color: " + obj_mantenimiento.Vehiculo_Color);
-                    MessageBox.Show("vehiculo modelo: " + obj_mantenimiento.Vehiculo_Modelo);
-                    MessageBox.Show("vehiculo placa: " + obj_mantenimiento.Vehiculo_Placa);
-                    MessageBox.Show("diagnostico: " + obj_mantenimiento.Diagnostico);
-                    MessageBox.Show("trabajos realizados: " + obj_mantenimiento.TrabajosRealizados);
-                    MessageBox.Show("tipo de mantenimiento: " + obj_mantenimiento.TipoMantenimiento);
-                    MessageBox.Show("repuestos: " + obj_mantenimiento.Repuestos);
-                    MessageBox.Show("valor repuestos: " + obj_mantenimiento.Valor_Repuestos.ToString());
-                    MessageBox.Show("total a pagar" + obj_mantenimiento.TotalPagar.ToString());
+                    MessageBox.Show("Rellene todos los datos - " + ex.Message);
                 }
             }
         }
@@ -319,7 +314,7 @@ namespace CapaVisual
                 tbxColor.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[6].Value.ToString();
                 tbxDiagnostico.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[7].Value.ToString();
                 rtbxTrabajosRealizados.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[8].Value.ToString();
-                cbxTipo.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[9].Value.ToString();
+                tbxTipo.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[9].Value.ToString();
                 tbxRepuestos.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[10].Value.ToString();
                 tbxValorRepuestos.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[11].Value.ToString();
                 tbxTotalPagar.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[12].Value.ToString();
@@ -344,20 +339,69 @@ namespace CapaVisual
             Close();
         }
 
-        private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbxCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxTipo.SelectedItem != null)
+            float costo = (valorSubTotal()*0.12f) + valorSubTotal();
+            tbxTotalPagar.Text = costo.ToString();
+        }
+
+        private float valorSubTotal()
+        {
+
+            switch (cbxServicios.SelectedIndex)
             {
-                if (cbxTipo.SelectedItem.ToString() == "PREVENTIVO")
-                {
-                    gbxRepuestos.Visible = false;
-                }
-                else if (cbxTipo.SelectedItem.ToString() == "CORRECTIVO")
-                {
-                    gbxRepuestos.Visible = true;
-                }
+                case 0:
+                    tbxTipo.Text = "PREVENTIVO";
+                    mostrarMenuRepuestos(tbxTipo.Text);
+                    return 5;
+
+                case 1:
+                    tbxTipo.Text = "CORRECTIVO";
+                    mostrarMenuRepuestos(tbxTipo.Text);
+                    return 45;
+                case 2:
+                    tbxTipo.Text = "PREVENTIVO";
+                    mostrarMenuRepuestos(tbxTipo.Text);
+                    return 50;
+                case 3:
+                    tbxTipo.Text = "CORRECTIVO";
+                    mostrarMenuRepuestos(tbxTipo.Text);
+                    return 40;
+                case 4:
+                    tbxTipo.Text = "CORRECTIVO";
+                    mostrarMenuRepuestos(tbxTipo.Text);
+                    return 30;
+                default:
+                    tbxTipo.Text = "";
+                    return 0;
             }
         }
 
+        private void mostrarMenuRepuestos(string tipo)
+        {
+            if (tipo == "PREVENTIVO"){ gbxRepuestos.Visible = false; }
+
+            else if (tipo == "CORRECTIVO"){ gbxRepuestos.Visible = true; }
+        }
+
+        private float valorRepuestos()
+        {
+            float valorRep = Convert.ToSingle(tbxValorRepuestos.Text);
+            return valorRep;
+        }
+        private float valorTotal()
+        {
+            float preResultado = valorSubTotal() + valorRepuestos();
+            float iva = preResultado * 0.12f;
+            return preResultado + iva;
+        }
+
+        private void tbxValorRepuestos_TextChanged(object sender, EventArgs e)
+        {
+            if(tbxValorRepuestos.Text.Length >= 0)
+            {
+                tbxTotalPagar.Text = valorTotal().ToString();  
+            }
+        }
     }
 }
