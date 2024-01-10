@@ -37,6 +37,7 @@
             btnNuevo = new Button();
             groupBox1 = new GroupBox();
             gbxRepuestos = new GroupBox();
+            label16 = new Label();
             tbxValorRepuestos = new TextBox();
             tbxRepuestos = new TextBox();
             label14 = new Label();
@@ -59,6 +60,7 @@
             tbxTotalPagar = new TextBox();
             label9 = new Label();
             groupBox3 = new GroupBox();
+            label15 = new Label();
             groupBox4 = new GroupBox();
             tbxPlaca = new TextBox();
             label10 = new Label();
@@ -116,6 +118,7 @@
             btnEliminar.Size = new Size(60, 60);
             btnEliminar.TabIndex = 15;
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnModificar
             // 
@@ -128,6 +131,7 @@
             btnModificar.Size = new Size(60, 60);
             btnModificar.TabIndex = 14;
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnAgregar
             // 
@@ -187,6 +191,7 @@
             // 
             // gbxRepuestos
             // 
+            gbxRepuestos.Controls.Add(label16);
             gbxRepuestos.Controls.Add(tbxValorRepuestos);
             gbxRepuestos.Controls.Add(tbxRepuestos);
             gbxRepuestos.Controls.Add(label14);
@@ -198,9 +203,19 @@
             gbxRepuestos.TabStop = false;
             gbxRepuestos.Text = "Respuestos";
             // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Perpetua Titling MT", 12.14F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.Location = new Point(94, 168);
+            label16.Name = "label16";
+            label16.Size = new Size(27, 30);
+            label16.TabIndex = 19;
+            label16.Text = "$";
+            // 
             // tbxValorRepuestos
             // 
-            tbxValorRepuestos.Location = new Point(99, 170);
+            tbxValorRepuestos.Location = new Point(125, 170);
             tbxValorRepuestos.Name = "tbxValorRepuestos";
             tbxValorRepuestos.Size = new Size(150, 26);
             tbxValorRepuestos.TabIndex = 3;
@@ -216,7 +231,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(19, 173);
+            label14.Location = new Point(19, 174);
             label14.Name = "label14";
             label14.Size = new Size(74, 20);
             label14.TabIndex = 1;
@@ -375,19 +390,20 @@
             dgvMantenimiento.RowTemplate.Height = 33;
             dgvMantenimiento.Size = new Size(935, 284);
             dgvMantenimiento.TabIndex = 11;
+            dgvMantenimiento.CellClick += dgvMantenimiento_CellClick;
             // 
             // tbxTotalPagar
             // 
-            tbxTotalPagar.Location = new Point(60, 44);
+            tbxTotalPagar.Location = new Point(83, 48);
             tbxTotalPagar.Margin = new Padding(2);
             tbxTotalPagar.Name = "tbxTotalPagar";
-            tbxTotalPagar.Size = new Size(150, 26);
+            tbxTotalPagar.Size = new Size(120, 26);
             tbxTotalPagar.TabIndex = 16;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(58, 21);
+            label9.Location = new Point(58, 20);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(156, 20);
@@ -397,6 +413,7 @@
             // groupBox3
             // 
             groupBox3.BackColor = Color.DarkSeaGreen;
+            groupBox3.Controls.Add(label15);
             groupBox3.Controls.Add(label9);
             groupBox3.Controls.Add(tbxTotalPagar);
             groupBox3.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -407,6 +424,16 @@
             groupBox3.Size = new Size(260, 88);
             groupBox3.TabIndex = 14;
             groupBox3.TabStop = false;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Perpetua Titling MT", 12.14F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.Location = new Point(55, 46);
+            label15.Name = "label15";
+            label15.Size = new Size(27, 30);
+            label15.TabIndex = 18;
+            label15.Text = "$";
             // 
             // groupBox4
             // 
@@ -571,5 +598,7 @@
         private RichTextBox rtbxTrabajosRealizados;
         private TextBox tbxRepuestos;
         private TextBox tbxValorRepuestos;
+        private Label label15;
+        private Label label16;
     }
 }

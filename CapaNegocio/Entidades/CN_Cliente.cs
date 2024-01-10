@@ -59,6 +59,27 @@ namespace CapaNegocio.Entidades
             }
         }
 
+        /*public int GetCLienteIDByName(string nombre)
+        {
+            try
+            {
+                string nombreStoredProcedure = "SP_RETORNAR_CLIENTE_BY_NOMBRE";
+
+                SqlParameter[] parametros = new SqlParameter[]
+                {
+                    new SqlParameter("@nombre", nombre),
+
+                };
+
+                return Convert.ToInt32(obj_capa_datos.EjecutarSPSelect(nombreStoredProcedure, parametros));
+
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Error al obtener el nombre de Cliente por ID." + ex.Message);
+            }
+        }*/
+
         public bool CrearCliente(CN_Cliente cliente)
         {
             try

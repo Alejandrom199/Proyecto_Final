@@ -8,7 +8,7 @@ namespace CapaNegocio.Entidades
 {
     public class CN_Vehiculo
     {
-        private string placa;
+        /*private string placa;
         private string marca;
         private string modelo;
         private string color;
@@ -28,6 +28,6 @@ namespace CapaNegocio.Entidades
         public string Placa { get => placa; set => placa = value; }
         public string Marca { get => marca; set => marca = value; }
         public string Modelo { get => modelo; set => modelo = value; }
-        public string Color { get => color; set => color = value; }
+        public string Color { get => color; set => color = value; }*/
     }
 }
