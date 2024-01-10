@@ -265,5 +265,7 @@ namespace CapaVisual
         {
             Close();
         }
+
+
     }
 }
