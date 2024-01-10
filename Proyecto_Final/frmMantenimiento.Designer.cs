@@ -229,7 +229,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(392, 84);
+            label3.Location = new Point(413, 88);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(83, 16);
