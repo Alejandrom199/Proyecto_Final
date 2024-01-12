@@ -52,7 +52,7 @@
             label8 = new Label();
             label7 = new Label();
             tbxDiagnostico = new TextBox();
-            tbxId = new TextBox();
+            tbxIdMan = new TextBox();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -177,7 +177,7 @@
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(tbxDiagnostico);
-            groupBox1.Controls.Add(tbxId);
+            groupBox1.Controls.Add(tbxIdMan);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
@@ -204,16 +204,16 @@
             // 
             cbxServicios.FormattingEnabled = true;
             cbxServicios.Items.AddRange(new object[] { "LAVADO", "ALINEACION", "CAMBIO DE ACEITE Y FILTRO", "SUSTITUCION DE BUJIAS", "ROTACION DE NEUMATICOS" });
-            cbxServicios.Location = new Point(644, 99);
+            cbxServicios.Location = new Point(593, 99);
             cbxServicios.Margin = new Padding(2);
             cbxServicios.Name = "cbxServicios";
-            cbxServicios.Size = new Size(273, 28);
+            cbxServicios.Size = new Size(324, 28);
             cbxServicios.TabIndex = 25;
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(540, 104);
+            label17.Location = new Point(489, 104);
             label17.Margin = new Padding(2, 0, 2, 0);
             label17.Name = "label17";
             label17.Size = new Size(100, 20);
@@ -350,13 +350,13 @@
             tbxDiagnostico.Size = new Size(219, 115);
             tbxDiagnostico.TabIndex = 11;
             // 
-            // tbxId
+            // tbxIdMan
             // 
-            tbxId.Location = new Point(91, 44);
-            tbxId.Margin = new Padding(2);
-            tbxId.Name = "tbxId";
-            tbxId.Size = new Size(63, 26);
-            tbxId.TabIndex = 6;
+            tbxIdMan.Location = new Point(91, 44);
+            tbxIdMan.Margin = new Padding(2);
+            tbxIdMan.Name = "tbxIdMan";
+            tbxIdMan.Size = new Size(63, 26);
+            tbxIdMan.TabIndex = 6;
             // 
             // label6
             // 
@@ -596,7 +596,7 @@
         private Label label8;
         private Label label7;
         private TextBox tbxDiagnostico;
-        private TextBox tbxId;
+        private TextBox tbxIdMan;
         private Label label6;
         private Label label5;
         private Label label4;

@@ -26,7 +26,7 @@ namespace CapaVisual
             btnCancelar.Enabled = true;
             MaximizeBox = false;
 
-            tbxId.ReadOnly = true;
+            tbxIdMan.ReadOnly = true;
             tbxTotalPagar.ReadOnly = true;
             tbxTipo.ReadOnly = true;
 
@@ -68,7 +68,7 @@ namespace CapaVisual
         {
             if (valor)
             {
-                tbxId.Enabled = false;
+                tbxIdMan.Enabled = false;
                 cbxMecanico.Enabled = false;
                 cbxCliente.Enabled = false;
                 tbxTipo.Enabled = false;
@@ -86,7 +86,7 @@ namespace CapaVisual
             }
             else
             {
-                tbxId.Enabled = true;
+                tbxIdMan.Enabled = true;
                 cbxMecanico.Enabled = true;
                 cbxCliente.Enabled = true;
                 tbxTipo.Enabled = true;
@@ -108,7 +108,7 @@ namespace CapaVisual
 
         private void SetearCampos()
         {
-            tbxId.Text = string.Empty;
+            tbxIdMan.Text = string.Empty;
             cbxMecanico.Text = string.Empty;
             cbxCliente.Text = string.Empty;
             tbxTipo.Text = string.Empty;
@@ -199,6 +199,12 @@ namespace CapaVisual
 
                         btnEliminar.Enabled = false;
                         btnEliminar.BackColor = Color.PaleVioletRed;
+
+                        MessageBox.Show("Cliente: "+obj_mantenimiento.Cliente +
+                            "\nNombre: "+obj_cliente.Nombre+
+                            "\nApellido: " + obj_cliente.Apellido +
+                            "\nCedula: "+obj_cliente.Cedula+
+                            "\nTotal con iva: "+obj_mantenimiento.TotalPagar);
                     }
                     else { }
 
@@ -242,7 +248,21 @@ namespace CapaVisual
         {
             if (!isNuevo)
             {
-
+                obj_mantenimiento.Id = Convert.ToInt32(tbxIdMan.Text);
+                obj_mantenimiento.Cliente = NombreAEnteroCliente(cbxCliente.Text);
+                obj_mantenimiento.Mecanico = NombreAEnteroMecanico(cbxMecanico.Text);
+                obj_mantenimiento.Fecha = dtpFecha.Value.ToUniversalTime();
+                obj_mantenimiento.Vehiculo_Marca = tbxMarca.Text;
+                obj_mantenimiento.Vehiculo_Color = tbxColor.Text;
+                obj_mantenimiento.Vehiculo_Modelo = tbxModelo.Text;
+                obj_mantenimiento.Vehiculo_Placa = tbxPlaca.Text;
+                obj_mantenimiento.Diagnostico = tbxDiagnostico.Text;
+                obj_mantenimiento.TrabajosRealizados = rtbxTrabajosRealizados.Text;
+                obj_mantenimiento.TipoMantenimiento = tbxTipo.Text;
+                obj_mantenimiento.Servicio = cbxServicios.Text;
+                obj_mantenimiento.Repuestos = tbxRepuestos.Text;
+                obj_mantenimiento.Valor_Repuestos = Convert.ToInt32(tbxValorRepuestos.Text);
+                obj_mantenimiento.TotalPagar = valorTotal();
 
                 if (obj_mantenimiento.ModificaMantenimiento(obj_mantenimiento))
                 {
@@ -271,7 +291,7 @@ namespace CapaVisual
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            obj_mantenimiento.Id = Convert.ToInt32(tbxId.Text);
+            obj_mantenimiento.Id = Convert.ToInt32(tbxIdMan.Text);
 
             if (obj_mantenimiento.EliminarMantenimiento(obj_mantenimiento))
             {
@@ -305,19 +325,42 @@ namespace CapaVisual
 
             if (e.RowIndex != -1)
             {
-                cbxCliente.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[0].Value.ToString();
-                cbxMecanico.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[1].Value.ToString();
-                if (dtpFecha.Value != null) { dtpFecha.Value = Convert.ToDateTime(dgvMantenimiento.Rows[e.RowIndex].Cells[2].Value); }
-                tbxPlaca.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[3].Value.ToString();
-                tbxMarca.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[4].Value.ToString();
-                tbxModelo.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[5].Value.ToString();
-                tbxColor.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[6].Value.ToString();
-                tbxDiagnostico.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[7].Value.ToString();
-                rtbxTrabajosRealizados.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[8].Value.ToString();
-                tbxTipo.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[9].Value.ToString();
-                tbxRepuestos.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[10].Value.ToString();
-                tbxValorRepuestos.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[11].Value.ToString();
-                tbxTotalPagar.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[12].Value.ToString();
+                tbxIdMan.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[0].Value.ToString();
+                cbxCliente.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[1].Value.ToString();
+                cbxMecanico.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+                object valorCelda = dgvMantenimiento.Rows[e.RowIndex].Cells[3].Value;
+
+                if (valorCelda != null && valorCelda != DBNull.Value)
+                {
+                    if (DateTime.TryParse(valorCelda.ToString(), out DateTime fechaSeleccionada))
+                    {
+                        // Validar que la fecha esté dentro del rango de DateTime de SQL Server
+                        if (fechaSeleccionada >= DateTime.MinValue && fechaSeleccionada <= DateTime.MaxValue)
+                        {
+                            dtpFecha.Value = fechaSeleccionada;
+                        }
+                        else{ MessageBox.Show("La fecha está fuera del rango permitido."); }
+                    }
+                    else { MessageBox.Show("El valor en la celda no es una fecha válida."); }
+                }
+                else { MessageBox.Show("La celda no contiene un valor de fecha."); }
+
+
+                tbxPlaca.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[4].Value.ToString();
+                tbxMarca.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[5].Value.ToString();
+                tbxModelo.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[6].Value.ToString();
+                tbxColor.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[7].Value.ToString();
+                tbxDiagnostico.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[8].Value.ToString();
+                rtbxTrabajosRealizados.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[9].Value.ToString();
+                tbxTipo.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[10].Value.ToString();
+                cbxServicios.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[11].Value.ToString();
+                tbxRepuestos.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[12].Value.ToString();
+                tbxValorRepuestos.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[13].Value.ToString();
+                tbxTotalPagar.Text = dgvMantenimiento.Rows[e.RowIndex].Cells[14].Value.ToString();
+
+                LlenarComboBoxClientes();
+                LlenarComboBoxMecanicos();
 
                 btnNuevo.Enabled = false;
                 btnNuevo.BackColor = Color.PaleVioletRed;
@@ -386,14 +429,26 @@ namespace CapaVisual
 
         private float valorRepuestos()
         {
-            float valorRep = Convert.ToSingle(tbxValorRepuestos.Text);
-            return valorRep;
+            try
+            {
+                float valorRep = Convert.ToSingle(tbxValorRepuestos.Text);
+                return valorRep;
+            }
+            catch(Exception e) { }
+
+            return 0;
         }
         private float valorTotal()
         {
-            float preResultado = valorSubTotal() + valorRepuestos();
-            float iva = preResultado * 0.12f;
-            return preResultado + iva;
+            try
+            {
+                float preResultado = valorSubTotal() + valorRepuestos();
+                float iva = preResultado * 0.12f;
+                return preResultado + iva;
+            }
+            catch (Exception e) { }
+
+            return 0;
         }
 
         private void tbxValorRepuestos_TextChanged(object sender, EventArgs e)

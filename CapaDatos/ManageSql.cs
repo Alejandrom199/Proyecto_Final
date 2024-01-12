@@ -80,5 +80,34 @@ namespace CapaDatos
 
             return result;
         }
+
+        public bool EjecutarSPValidarCredenciales(string storedProcedureName, SqlParameter[] parameters)
+        {
+            try
+            {
+                var command = new SqlCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = storedProcedureName;
+
+                if (parameters != null)
+                {
+                    command.Parameters.AddRange(parameters);
+                }
+
+                command.Connection = conn.AbrirConexion();
+                int count = (int)command.ExecuteScalar();
+
+                conn.CerrarConexion();
+
+                // Devolver true si se encontró al menos una fila
+                return count > 0;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }
+
+//SELECT COUNT(*) FROM tb_Usuarios WHERE username = @Username AND clave = @Clave ";
