@@ -109,23 +109,23 @@
             // 
             // tbxClave
             // 
+            tbxClave.Cursor = Cursors.IBeam;
             tbxClave.Location = new Point(132, 302);
             tbxClave.Margin = new Padding(4);
             tbxClave.Name = "tbxClave";
             tbxClave.Size = new Size(191, 31);
             tbxClave.TabIndex = 3;
-            tbxClave.MouseEnter += tbxClave_MouseEnter;
-            tbxClave.MouseLeave += tbxClave_MouseLeave;
+            tbxClave.Text = "Clave";
             // 
             // tbxUsuario
             // 
+            tbxUsuario.Cursor = Cursors.IBeam;
             tbxUsuario.Location = new Point(132, 220);
             tbxUsuario.Margin = new Padding(4);
             tbxUsuario.Name = "tbxUsuario";
             tbxUsuario.Size = new Size(224, 31);
             tbxUsuario.TabIndex = 2;
-            tbxUsuario.MouseEnter += tbxUsuario_MouseEnter;
-            tbxUsuario.MouseLeave += tbxUsuario_MouseLeave;
+            tbxUsuario.Text = "Usuario";
             // 
             // pictureBox3
             // 

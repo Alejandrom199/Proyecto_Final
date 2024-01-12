@@ -20,7 +20,6 @@ namespace CapaVisual
         public frmLogin()
         {
             InitializeComponent();
-            initPlaceholder();
             StartPosition = FormStartPosition.CenterScreen;
             MaximizeBox = false;
 
@@ -87,58 +86,5 @@ namespace CapaVisual
                 }
             }
         }
-
-        private void tbxUsuario_MouseEnter(object sender, EventArgs e)
-        {
-            if (tbxUsuario.Text == "Ingrese su usuario aquí")
-            {
-                tbxUsuario.Text = "";
-                tbxUsuario.ForeColor = Color.Black;
-            }
-        }
-
-        private void tbxUsuario_MouseLeave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(tbxUsuario.Text))
-            {
-                tbxUsuario.Text = "Ingrese su usuario aquí";
-                tbxUsuario.ForeColor = Color.Gray;
-            }
-        }
-        private void tbxClave_MouseEnter(object sender, EventArgs e)
-        {
-            if (tbxClave.Text == "Ingrese su clave aquí")
-            {
-                tbxClave.Text = "";
-                tbxClave.ForeColor = Color.Black;
-            }
-        }
-
-        private void tbxClave_MouseLeave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(tbxClave.Text))
-            {
-                tbxClave.Text = "Ingrese su clave aquí";
-                tbxClave.ForeColor = Color.Gray;
-            }
-        }
-
-        private void initPlaceholder()
-        {
-            //Usuario
-            tbxUsuario.Enter += tbxUsuario_MouseEnter;
-            tbxUsuario.Leave += tbxUsuario_MouseLeave;
-
-            tbxUsuario.Text = "Ingrese su usuario aquí";
-            tbxUsuario.ForeColor = Color.Gray;
-
-            //Clave
-            tbxClave.Enter += tbxClave_MouseEnter;
-            tbxClave.Leave += tbxClave_MouseLeave;
-
-            tbxClave.Text = "Ingrese su clave aquí";
-            tbxClave.ForeColor = Color.Gray;
-        }
-
     }
 }
