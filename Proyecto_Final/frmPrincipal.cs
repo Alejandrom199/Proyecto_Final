@@ -38,11 +38,16 @@ namespace CapaVisual
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas cerrar la aplicación?", "Cerrar aplicación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("¿Deseas cerrar tu sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
-                Application.Exit();
+                Close();
+                frmLogin pantallaLogin = new frmLogin();
+                pantallaLogin.Show();
+            }else
+            {
+
             }
         }
     }

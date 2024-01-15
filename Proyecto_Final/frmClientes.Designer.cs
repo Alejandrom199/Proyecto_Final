@@ -68,13 +68,13 @@
             dgvClientes.ReadOnly = true;
             dgvClientes.RowHeadersWidth = 62;
             dgvClientes.RowTemplate.Height = 33;
-            dgvClientes.Size = new Size(1251, 336);
+            dgvClientes.Size = new Size(1205, 336);
             dgvClientes.TabIndex = 0;
             dgvClientes.CellClick += dgvClientes_CellClick;
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.Plum;
+            groupBox1.BackColor = Color.Transparent;
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(tbxCedula);
             groupBox1.Controls.Add(tbxDireccion);
@@ -222,11 +222,11 @@
             btnNuevo.BackgroundImage = (Image)resources.GetObject("btnNuevo.BackgroundImage");
             btnNuevo.BackgroundImageLayout = ImageLayout.Stretch;
             btnNuevo.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnNuevo.Location = new Point(39, 30);
+            btnNuevo.Location = new Point(20, 27);
             btnNuevo.Margin = new Padding(2);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.RightToLeft = RightToLeft.No;
-            btnNuevo.Size = new Size(60, 60);
+            btnNuevo.Size = new Size(80, 80);
             btnNuevo.TabIndex = 2;
             btnNuevo.UseVisualStyleBackColor = false;
             btnNuevo.Click += btnNuevo_Click;
@@ -236,10 +236,10 @@
             btnAgregar.BackgroundImage = (Image)resources.GetObject("btnAgregar.BackgroundImage");
             btnAgregar.BackgroundImageLayout = ImageLayout.Stretch;
             btnAgregar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAgregar.Location = new Point(159, 30);
+            btnAgregar.Location = new Point(121, 27);
             btnAgregar.Margin = new Padding(2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(60, 60);
+            btnAgregar.Size = new Size(80, 80);
             btnAgregar.TabIndex = 3;
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
@@ -249,10 +249,10 @@
             btnModificar.BackgroundImage = (Image)resources.GetObject("btnModificar.BackgroundImage");
             btnModificar.BackgroundImageLayout = ImageLayout.Stretch;
             btnModificar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnModificar.Location = new Point(39, 126);
+            btnModificar.Location = new Point(20, 123);
             btnModificar.Margin = new Padding(2);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(60, 60);
+            btnModificar.Size = new Size(80, 80);
             btnModificar.TabIndex = 4;
             btnModificar.UseVisualStyleBackColor = true;
             btnModificar.Click += btnModificar_Click;
@@ -262,10 +262,10 @@
             btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
             btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
             btnEliminar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEliminar.Location = new Point(159, 126);
+            btnEliminar.Location = new Point(121, 123);
             btnEliminar.Margin = new Padding(2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(60, 60);
+            btnEliminar.Size = new Size(80, 80);
             btnEliminar.TabIndex = 5;
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
@@ -275,27 +275,27 @@
             btnCancelar.BackgroundImage = (Image)resources.GetObject("btnCancelar.BackgroundImage");
             btnCancelar.BackgroundImageLayout = ImageLayout.Zoom;
             btnCancelar.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancelar.Location = new Point(101, 219);
+            btnCancelar.Location = new Point(20, 213);
             btnCancelar.Margin = new Padding(2);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(60, 60);
+            btnCancelar.Size = new Size(181, 77);
             btnCancelar.TabIndex = 6;
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // groupBox2
             // 
-            groupBox2.BackColor = Color.Plum;
+            groupBox2.BackColor = Color.Thistle;
             groupBox2.Controls.Add(btnCancelar);
             groupBox2.Controls.Add(btnEliminar);
             groupBox2.Controls.Add(btnModificar);
             groupBox2.Controls.Add(btnAgregar);
             groupBox2.Controls.Add(btnNuevo);
-            groupBox2.Location = new Point(999, 13);
+            groupBox2.Location = new Point(994, 13);
             groupBox2.Margin = new Padding(2);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(2);
-            groupBox2.Size = new Size(262, 300);
+            groupBox2.Size = new Size(221, 300);
             groupBox2.TabIndex = 7;
             groupBox2.TabStop = false;
             // 
@@ -303,8 +303,10 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.PeachPuff;
-            ClientSize = new Size(1275, 681);
+            BackColor = SystemColors.ControlLightLight;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1228, 681);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(dgvClientes);

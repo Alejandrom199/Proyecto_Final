@@ -29,168 +29,193 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            pictureBox1 = new PictureBox();
-            panel1 = new Panel();
+            panel2 = new Panel();
+            pnlIcono = new Panel();
+            pnlMayor = new Panel();
             btnVerClave = new Button();
-            btnIngresar = new Button();
-            label1 = new Label();
+            pictureBox2 = new PictureBox();
             tbxClave = new TextBox();
             tbxUsuario = new TextBox();
             pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            groupBox1 = new GroupBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            btnSalir = new Button();
+            pnlMenor = new Panel();
+            lblIngresar = new Label();
+            panel2.SuspendLayout();
+            pnlMayor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            pnlMenor.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox1
+            // panel2
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-2, -4);
-            pictureBox1.Margin = new Padding(4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(514, 674);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.UseWaitCursor = true;
+            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Controls.Add(pnlIcono);
+            panel2.Controls.Add(pnlMayor);
+            panel2.Controls.Add(btnSalir);
+            panel2.Controls.Add(pnlMenor);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(508, 599);
+            panel2.TabIndex = 2;
             // 
-            // panel1
+            // pnlIcono
             // 
-            panel1.BackColor = Color.Bisque;
-            panel1.Controls.Add(btnVerClave);
-            panel1.Controls.Add(btnIngresar);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(tbxClave);
-            panel1.Controls.Add(tbxUsuario);
-            panel1.Controls.Add(pictureBox3);
-            panel1.Controls.Add(pictureBox2);
-            panel1.Location = new Point(17, 10);
-            panel1.Margin = new Padding(4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(412, 492);
-            panel1.TabIndex = 1;
+            pnlIcono.BackColor = Color.Transparent;
+            pnlIcono.BackgroundImage = (Image)resources.GetObject("pnlIcono.BackgroundImage");
+            pnlIcono.BackgroundImageLayout = ImageLayout.Zoom;
+            pnlIcono.Location = new Point(191, 35);
+            pnlIcono.Name = "pnlIcono";
+            pnlIcono.Size = new Size(150, 150);
+            pnlIcono.TabIndex = 10;
+            // 
+            // pnlMayor
+            // 
+            pnlMayor.BackColor = Color.Transparent;
+            pnlMayor.BackgroundImage = (Image)resources.GetObject("pnlMayor.BackgroundImage");
+            pnlMayor.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlMayor.Controls.Add(btnVerClave);
+            pnlMayor.Controls.Add(pictureBox2);
+            pnlMayor.Controls.Add(tbxClave);
+            pnlMayor.Controls.Add(tbxUsuario);
+            pnlMayor.Controls.Add(pictureBox3);
+            pnlMayor.Location = new Point(50, 114);
+            pnlMayor.Name = "pnlMayor";
+            pnlMayor.Size = new Size(409, 300);
+            pnlMayor.TabIndex = 9;
             // 
             // btnVerClave
             // 
-            btnVerClave.Location = new Point(322, 300);
+            btnVerClave.BackgroundImage = (Image)resources.GetObject("btnVerClave.BackgroundImage");
+            btnVerClave.BackgroundImageLayout = ImageLayout.Stretch;
+            btnVerClave.Location = new Point(313, 196);
             btnVerClave.Name = "btnVerClave";
-            btnVerClave.Size = new Size(34, 34);
+            btnVerClave.Size = new Size(31, 31);
             btnVerClave.TabIndex = 6;
             btnVerClave.UseVisualStyleBackColor = true;
             btnVerClave.Click += btnVerClave_Click;
             // 
-            // btnIngresar
+            // pictureBox2
             // 
-            btnIngresar.BackColor = Color.Tomato;
-            btnIngresar.Font = new Font("Perpetua Titling MT", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnIngresar.Location = new Point(114, 409);
-            btnIngresar.Margin = new Padding(4);
-            btnIngresar.Name = "btnIngresar";
-            btnIngresar.Size = new Size(199, 41);
-            btnIngresar.TabIndex = 5;
-            btnIngresar.Text = "Ingresar";
-            btnIngresar.UseVisualStyleBackColor = false;
-            btnIngresar.Click += btnIngresar_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Perpetua Titling MT", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(114, 86);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(192, 58);
-            label1.TabIndex = 4;
-            label1.Text = "LOGIN";
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(68, 105);
+            pictureBox2.Margin = new Padding(4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(50, 50);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
             // 
             // tbxClave
             // 
             tbxClave.Cursor = Cursors.IBeam;
-            tbxClave.Location = new Point(132, 302);
+            tbxClave.Location = new Point(133, 196);
             tbxClave.Margin = new Padding(4);
             tbxClave.Name = "tbxClave";
-            tbxClave.Size = new Size(191, 31);
+            tbxClave.Size = new Size(182, 31);
             tbxClave.TabIndex = 3;
             tbxClave.Text = "Clave";
             // 
             // tbxUsuario
             // 
             tbxUsuario.Cursor = Cursors.IBeam;
-            tbxUsuario.Location = new Point(132, 220);
+            tbxUsuario.Location = new Point(133, 114);
             tbxUsuario.Margin = new Padding(4);
             tbxUsuario.Name = "tbxUsuario";
-            tbxUsuario.Size = new Size(224, 31);
+            tbxUsuario.Size = new Size(214, 31);
             tbxUsuario.TabIndex = 2;
             tbxUsuario.Text = "Usuario";
             // 
             // pictureBox3
             // 
+            pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(61, 290);
+            pictureBox3.Location = new Point(68, 187);
             pictureBox3.Margin = new Padding(4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(60, 60);
+            pictureBox3.Size = new Size(50, 50);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 1;
             pictureBox3.TabStop = false;
             // 
-            // pictureBox2
+            // btnSalir
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(61, 208);
-            pictureBox2.Margin = new Padding(4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(60, 60);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
+            btnSalir.BackColor = Color.Transparent;
+            btnSalir.BackgroundImage = (Image)resources.GetObject("btnSalir.BackgroundImage");
+            btnSalir.BackgroundImageLayout = ImageLayout.Stretch;
+            btnSalir.Cursor = Cursors.Hand;
+            btnSalir.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Location = new Point(473, 7);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(30, 30);
+            btnSalir.TabIndex = 0;
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
-            // groupBox1
+            // pnlMenor
             // 
-            groupBox1.Controls.Add(panel1);
-            groupBox1.Location = new Point(32, 31);
-            groupBox1.Margin = new Padding(4);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(447, 520);
-            groupBox1.TabIndex = 2;
-            groupBox1.TabStop = false;
+            pnlMenor.BackColor = Color.Transparent;
+            pnlMenor.BackgroundImage = (Image)resources.GetObject("pnlMenor.BackgroundImage");
+            pnlMenor.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlMenor.Controls.Add(lblIngresar);
+            pnlMenor.Cursor = Cursors.Hand;
+            pnlMenor.Location = new Point(105, 413);
+            pnlMenor.Name = "pnlMenor";
+            pnlMenor.Size = new Size(300, 74);
+            pnlMenor.TabIndex = 0;
+            pnlMenor.Click += pnlMenor_Click;
+            // 
+            // lblIngresar
+            // 
+            lblIngresar.AutoSize = true;
+            lblIngresar.Cursor = Cursors.Arrow;
+            lblIngresar.FlatStyle = FlatStyle.Flat;
+            lblIngresar.Font = new Font("Cascadia Mono", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblIngresar.ForeColor = SystemColors.ControlLightLight;
+            lblIngresar.Location = new Point(86, 21);
+            lblIngresar.Name = "lblIngresar";
+            lblIngresar.Size = new Size(126, 32);
+            lblIngresar.TabIndex = 0;
+            lblIngresar.Text = "Ingresar";
+            lblIngresar.Click += lblIngresar_Click;
             // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(508, 599);
-            Controls.Add(groupBox1);
-            Controls.Add(pictureBox1);
+            Controls.Add(panel2);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmLogin";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            Paint += frmLogin_Paint;
+            panel2.ResumeLayout(false);
+            pnlMayor.ResumeLayout(false);
+            pnlMayor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            pnlMenor.ResumeLayout(false);
+            pnlMenor.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
-        private Panel panel1;
-        private Button btnIngresar;
-        private Label label1;
+        private Panel panel2;
+        private Panel pnlMayor;
+        private Button btnVerClave;
+        private Button btnSalir;
+        private PictureBox pictureBox2;
         private TextBox tbxClave;
         private TextBox tbxUsuario;
         private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
-        private GroupBox groupBox1;
-        private Button btnVerClave;
+        private Panel pnlMenor;
+        private Label lblIngresar;
+        private Panel pnlIcono;
     }
 }
